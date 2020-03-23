@@ -2,3 +2,9 @@ p {
   color: red;
   font-family: verdana;
 }
+
+.text-format{
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+}
