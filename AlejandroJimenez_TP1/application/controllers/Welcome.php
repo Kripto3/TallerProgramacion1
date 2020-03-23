@@ -20,7 +20,7 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('plantilla.html'); 
+		$this->load->view('principal.html'); 
 	}
 	
 }
