@@ -1,4 +1,4 @@
-p {
+/*p {
   color: red;
   font-family: verdana;
 }
@@ -8,3 +8,30 @@ p {
   font-weight: bold;
   font-style: italic;
 }
+*/
+
+*{
+ margin:0;
+}
+li{
+  color: green;
+  font-weight: bold;
+  font-style: italic;
+}
+.titulo{
+ background-color: BlueViolet;
+ margin: 20px;
+}
+.parrafo{
+ background-color: crimson;
+ padding-top: 50px;
+ padding-left: 10px;
+ padding-bottom: 60px;
+ padding-right: 300px;
+}
+footer{
+ background-color: GoldenRod;
+ padding: 10px 20px 30px 40px;
+ margin: 10px 200px;
+}
+
