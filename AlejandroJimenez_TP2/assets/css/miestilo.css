@@ -13,11 +13,37 @@
 *{
  margin:0;
 }
+nav{
+	position: relative;
+    display: flex;
+    align-items: center;
+    padding: .5rem 1rem;
+}
+
+ul{
+	list-style: none;
+}
+
 li{
   color: green;
   font-weight: bold;
   font-style: italic;
+  display:inline;
+  padding-left:3px;
+  padding-right:3px;
+  padding: 6px;
+    border-left: 1px solid;
 }
+.margin-izq{
+	margin-left: auto!important;
+}
+
+a{
+	text-decoration: none;
+}
+
+
+
 .titulo{
  background-color: BlueViolet;
  margin: 20px;
