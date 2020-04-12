@@ -1,12 +1,96 @@
 
-    <section class="container">
-      <h1 class="text-center">Biomas</h1>
-    </section>
-    <section class="container mt-2 ">
-      <p class="h3 text-center font-weight-bold font-italic text-uppercase">Definici&oacute;n de Bioma - (del Lat&iacute;n: vida)</p> 
-      <p class="mt-3">Un bioma, tambi&eacute;n llamado paisaje bioclim&aacute;tico o &aacute;rea bi&oacute;tica es una determinada parte del planeta que comparte el clima, flora y fauna.</p>
-      <p class="mb-0">Un bioma es el conjunto de ecosistemas caracter&iacute;sticos de una zona biogeogr&aacute;fica que est&aacute; definido a partir de su vegetaci&oacute;n y de las especies animales que predominan.
-      En función de la latitud, la temperatura, las precipitaciones y la altitud, en definitiva, y de las características básicas del clima, se puede dividir la tierra en zonas de características semejantes; en cada una de esas zonas se desarrolla una vegetación (fitocenosis) y una fauna (zoocenosis) que cuando están relacionadas, definen un bioma, que comprende las nociones de comunidad y la interacción entre suelo, plantas y animales.</p>    
-      <p class="mb-0">Estas im&eacute;genes son un ejemplo de los distintos tipos de biomas que podemos encontrar en el planeta.</p>    
-    </section>
-    
+<section class="jumbotron position-relative" style="background-image:url(<?php echo base_url('assets/img/banner5.png');?>);">
+  <div class="jumbotron_body jumbotron_body-lg position-relative z-index-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="text-center text-white">Encuentra aqui las mejores marcas del mercado</h2>
+          <p class="text-white text-center">Acessorios y computadoras Gamers y Profesionales, Asistencia y consultas para todos.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <br><br>
+          <h6 class="text-white text-center">Anuncio: por temas relacionados con el COVID-19 ahora envios puerta a puerta <br>
+           #QuedateEnCasa</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="overlay"></div>
+</section>
+ <section class="album py-3 bg-white">
+  <h3 class="text-center mb-3">&Uacute;ltimos articulos</h3>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="<?php echo base_url('assets/img/silla.jpg') ?>" />
+                <div class="card-body">
+                  <h5 class="card-title">Silla gamer ACKRACING</h5>
+                  <p class="card-text">Color rojo, adaptada para grandes hora de uso y con respaldar adaptable hasta 130 grados.</p><br>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-success">Detalles</button>
+                    </div>
+                    <small class="text-muted">10 minutos</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="<?php echo base_url('assets/img/auricular.jpg') ?>" />
+                <div class="card-body">
+                  <h5 class="card-title">Audifonos gamers con Micr&oacute;fono para PS4</h5>
+                  <p class="card-text">Con un sonido cristalino, es una opci&oacute;n para escuchar peliculas,videojuegos y m&uacute;sica.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-success">Detalles</button>
+                    </div>
+                    <small class="text-muted">12 horas</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="<?php echo base_url('assets/img/mouse.jpg') ?>" />
+                <div class="card-body">
+                  <h5 class="card-title">Mouse gamer - UBS 3.0</h5>
+
+                  <p class="card-text">Fácil configuraci&oacute;n de botones laterales para mayor velocidad de acceso a atajos en comandos de juegos.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-success">Detalles</button>
+                    </div>
+                    <small class="text-muted">1 dia</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+ </section>
+ <section class="container bg-white">
+  <hr class="my-4">
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="text-muted">Nuestra empresa siempre a tu lado</h2>
+      <p>En KRIPTO, estamos capacitados para darte las mejores opciónes en recursos para tu GameSite.</p>
+       <p>Descubre la potencia, el rendimiento y las funcionalidades de los equipos de una de las marcas favoritas del mercado de computadores.
+      </p>
+    </div>
+    <div class="col-md-6 bg-light">
+       <img class="img-fluid" src="<?php echo base_url('assets/img/asus.png') ?>" />
+    </div>
+  </div>
+ </section>
+   <hr class="my-4">
+<section class="container bg-light pt-4">
+<div class="row">
+      <div class="col-md-3 font-size-20"><i class="fa fa-gift"></i> Mas de 1000 productos.</div>
+      <div class="col-md-3 font-size-20"><i class="fa fa-shield"></i> Compras Seguras.</div>
+      <div class="col-md-3 font-size-20"><i class="fa fa-credit-card-alt"></i> Paga en linea / efectivo.</div>
+      <div class="col-md-3 font-size-20"><i class="fa fa-handshake-o"></i> Garantia y devoluciones.</div><br><br><br>
+</div>
+</section>

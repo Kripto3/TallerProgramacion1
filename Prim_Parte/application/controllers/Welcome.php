@@ -9,7 +9,7 @@ class Welcome extends CI_Controller {
 
 	public function index() 	
 	{
-		$data['titulo'] = 'principal';
+		$data['titulo'] = 'Principal';
 
 		$this->load->view('front/header_view', $data); 
 		$this->load->view('front/navbar_view'); 
@@ -17,53 +17,63 @@ class Welcome extends CI_Controller {
 		$this->load->view('front/footer_view'); 
 	}
 
-		public function comercializacion() 	
+	public function comercializacion() 	
 	{
-		$data['titulo'] = 'comercializacion';
+		$data['titulo'] = 'Info Comercial';
 
 		$this->load->view('front/header_view', $data); 
 		$this->load->view('front/navbar_view'); 
-		$this->load->view('partes/principal'); 
+		$this->load->view('partes/comercializacion'); 
 		$this->load->view('front/footer_view'); 
 	}
 
-		public function informacion() 	
+	public function informacion() 	
+	{
+		$data['titulo'] = 'Contactos';
+
+		$this->load->view('front/header_view', $data); 
+		$this->load->view('front/navbar_view'); 
+		$this->load->view('partes/informacion_de_contactos'); 
+		$this->load->view('front/footer_view'); 
+	}
+
+	public function catalogo() 	
 	{
 		$data['titulo'] = 'principal';
 
 		$this->load->view('front/header_view', $data); 
 		$this->load->view('front/navbar_view'); 
-		$this->load->view('partes/principal'); 
+		$this->load->view('partes/catalogo_de_productos'); 
 		$this->load->view('front/footer_view'); 
 	}
 
-		public function catalogo() 	
+	public function quienesSomos() 	
 	{
-		$data['titulo'] = 'principal';
+		$data['titulo'] = 'Quienes Somos';
 
 		$this->load->view('front/header_view', $data); 
 		$this->load->view('front/navbar_view'); 
-		$this->load->view('partes/principal'); 
+		$this->load->view('partes/quienes_somos'); 
 		$this->load->view('front/footer_view'); 
 	}
 
-		public function quienesSomos() 	
+	public function consultas() 	
 	{
-		$data['titulo'] = 'principal';
+		$data['titulo'] = 'Consultas';
 
 		$this->load->view('front/header_view', $data); 
 		$this->load->view('front/navbar_view'); 
-		$this->load->view('partes/principal'); 
+		$this->load->view('partes/consultas'); 
 		$this->load->view('front/footer_view'); 
 	}
 
-		public function consultas() 	
+	public function terminos() 	
 	{
-		$data['titulo'] = 'principal';
+		$data['titulo'] = 'Terminos y Condiciones';
 
 		$this->load->view('front/header_view', $data); 
 		$this->load->view('front/navbar_view'); 
-		$this->load->view('partes/principal'); 
+		$this->load->view('partes/terminos_y_usos'); 
 		$this->load->view('front/footer_view'); 
 	}
 	
