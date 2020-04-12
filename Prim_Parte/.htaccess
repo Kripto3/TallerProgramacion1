@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+#RewriteBase /
+
+# Removes index.php from ExpressionEngine URLs
+RewriteCond %{THE_REQUETS} ^GET.*INDEX\.php [NC]
+RewriteCond %{REQUEST_URI} !/system/.* [NC]
+RewriteRule (.*?)index\.php/*(.*) Prim_Parte/$1$2 [R=301,NE,L]
+
+# Directs all EE web request through the site index file
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ Prim_Parte/index.php/$ [L]
+</IfModule>
