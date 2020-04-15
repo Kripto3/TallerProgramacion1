@@ -107,3 +107,11 @@ body {
   left: 50%;
   top: calc(50% - 3px);
 }
+
+
+
+@media (max-width: 768px){
+    .img-center{
+        text-align: center;
+    }
+}
