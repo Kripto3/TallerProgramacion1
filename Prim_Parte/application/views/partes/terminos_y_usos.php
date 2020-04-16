@@ -3,7 +3,7 @@
 		<h2 class="text-center">Terminos y Condiciones</h3>
 		<hr class="my-4 ">
 		<p>
-			Bienvenido al sitio de comercio electrónico www.kripto.com, en adelante (“El Sitio” o “kripto.com”), constituido bajo las leyes Argentinanas, cuya actividad principal es permitir la exhibición y comercialización de productos y servicios para su adquisición en línea por los consumidores ubicados en Argentina, en adelante (“los Clientes” o “los Usuarios”).</p>
+			Bienvenido al sitio de comercio electrónico www.kripto.com, en adelante (“El Sitio” o “kripto.com”), constituido bajo las leyes Argentinas, cuya actividad principal es permitir la exhibición y comercialización de productos y servicios para su adquisición en línea por los consumidores ubicados en Argentina, en adelante (“los Clientes” o “los Usuarios”).</p>
 		<p>
 			kripto.com es controlado y operado por Almacenes KRIPTO, en adelante (“KRIPTO”), Sociedad Comercial domiciliada en la República de Argentina. Aquellos Usuarios que decidan ingresar al Sitio desde otros países, lo harán bajo su propia iniciativa y es su responsabilidad el sujetarse a las leyes locales que sean aplicables. Cualquier reclamo en relación con el uso del Sitio y el material en él contenido está regulado por las leyes Argentinanas.</p>
 		<p>

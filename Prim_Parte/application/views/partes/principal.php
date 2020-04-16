@@ -85,7 +85,24 @@
     </div>
   </div>
  </section>
-   <hr class="my-4">
+   <section class="container mb-3">
+    <hr class="my-4">
+    <div class="row">
+      <h2 class="text-muted">Sponsor oficial en ArgentinaGameShow 2019</h3>
+      <div class="col-md-6">
+        <div class="embed-responsive embed-responsive-16by9">
+         <iframe  class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/_2q7Rm9a7Ws" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+        </div>
+      </div>
+       <div class="col-md-6">
+         <h2 class="text-muted"></h2>
+      <p>Gracias al crecimiento y apoyo de nuestros clientes, fuimos seleccionardos como sponsor oficiales del evento de videojuegos m&aacute;s grande de Argentina.<br>
+        Para todos ustedes de parte de KRIPTO <strong class="text-success">Muchas Gracias !! :D</strong></p>
+       <p>Echale un vistazo.
+      </p>
+       </div>
+    </div>
+   </section>
 <section class="container bg-light pt-4">
 <div class="row">
       <div class="col-md-3 font-size-20"><i class="fa fa-gift"></i> Mas de 1000 productos.</div>
