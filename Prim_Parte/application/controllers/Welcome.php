@@ -76,5 +76,15 @@ class Welcome extends CI_Controller {
 		$this->load->view('partes/terminos_y_usos'); 
 		$this->load->view('front/footer_view'); 
 	}
+
+	//funcion para reistrarse 
+	public function registrarse(){
+		$data['titulo'] = 'Registro';
+
+		$this->load->view('front/header_view', $data); 
+		$this->load->view('front/navbar_view'); 
+		$this->load->view('formularios/registrarusuario_view'); 
+		$this->load->view('front/footer_view'); 
+	}
 	
 }

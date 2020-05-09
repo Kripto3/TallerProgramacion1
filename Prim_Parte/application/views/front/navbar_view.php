@@ -28,6 +28,7 @@
               <a class="nav-link" href="<?php echo base_url('informacion');?>">Contactos</a>
             </li>
           </ul>
+          | <a href="#" class="btn">Iniciar Seccion</a> | <a href="<?php echo base_url('registrarse');?>" class="btn">Registrase</a>
         </div>
       </nav>
     </section>
