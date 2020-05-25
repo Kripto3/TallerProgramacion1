@@ -30,6 +30,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			$session_data = $this->session->userdata('logged_in');
 			$data['perfil_id'] = $session_data['perfil_id'];
 			$data['nombre'] = $session_data['nombre'];
+			$data['apellido'] = $session_data['apellido'];
 
 			$dat = array('productos' => $this->producto_model->get_productos() );
 
@@ -52,6 +53,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			$session_data = $this->session->userdata('logged_in');
 			$data['perfil_id'] = $session_data['perfil_id'];
 			$data['nombre'] = $session_data['nombre'];
+			$data['apellido'] = $session_data['apellido'];
 
 			$dat = array('productos' => $this->producto_model->get_electrodomesticos() );
 
@@ -74,12 +76,13 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			$session_data = $this->session->userdata('logged_in');
 			$data['perfil_id'] = $session_data['perfil_id'];
 			$data['nombre'] = $session_data['nombre'];
+			$data['apellido'] = $session_data['apellido'];
 
 			$dat = array('productos' => $this->producto_model->get_muebles() );
 
 			$this->load->view('front/header_view', $data);
 			$this->load->view('front/navbar_view');
-			//$this->load->view('back/productos/muestramuebles_view', $dat);
+			//$this->load->view('tablas/muestramuebles_view', $dat);
 			$this->load->view('front/footer_view');
 			}else{
 			redirect('login', 'refresh'); }
@@ -96,10 +99,13 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			$session_data = $this->session->userdata('logged_in');
 			$data['perfil_id'] = $session_data['perfil_id'];
 			$data['nombre'] = $session_data['nombre'];
+			$data['apellido'] = $session_data['apellido'];
+
+			$dat = array('productos' => $this->producto_model->get_productos() );
 
 			$this->load->view('front/header_view', $data);
 			$this->load->view('front/navbar_view');
-			//$this->load->view('back/productos/agregaproducto_view');
+			$this->load->view('tablas/agregaproducto_view',$dat);
 			$this->load->view('front/footer_view');
 			}else{
 			redirect('login', 'refresh'); }
@@ -137,11 +143,12 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 				$session_data = $this->session->userdata('logged_in');
 				$data['perfil_id'] = $session_data['perfil_id'];
 				$data['nombre'] = $session_data['nombre'];
+				$data['apellido'] = $session_data['apellido'];
 
 
 				$this->load->view('front/header_view', $data);
-				$this->load->view('front/menu_view');
-				//$this->load->view('back/productos/agregaproducto_view');
+				$this->load->view('front/navbar_view');
+				$this->load->view('tablas/agregaproducto_view');
 				$this->load->view('front/footer_view');
 			}
 			else
@@ -164,7 +171,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			if (!empty($_FILES['filename']['name']))
 			{
 				// Especifica la configuración para el archivo
-				$config['upload_path'] = 'img/productos/';
+				$config['upload_path'] = 'assets/img/productos/';
 				$config['allowed_types'] = 'gif|jpg|JPEG|png';
 
 				$config['max_size'] = '2048';
@@ -180,7 +187,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 					$data = $this->upload->data();
 
 					// Path donde guarda el archivo..
-					$url ="img/productos/".$_FILES['filename']['name'];
+					$url ="assets/img/productos/".$_FILES['filename']['name'];
 
 					// Array de datos para insertar en productos
 					$data = array(
@@ -196,7 +203,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 					$productos = $this->producto_model->add_producto($data);
 
-					redirect('productos_todos', 'refresh');
+					redirect('productos', 'refresh');
 
 					return TRUE;
 				}
@@ -252,10 +259,11 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			$session_data = $this->session->userdata('logged_in');
 			$data['perfil_id'] = $session_data['perfil_id'];
 			$data['nombre'] = $session_data['nombre'];
+			$data['apellido'] = $session_data['apellido'];
 
 			$this->load->view('front/header_view', $data);
 			$this->load->view('front/navbar_view');
-			//$this->load->view('back/productos/modificaproducto_view', $dat);
+			$this->load->view('tablas/modificaproducto_view', $dat);
 			$this->load->view('front/footer_view');
 			}else{
 			redirect('login', 'refresh');}
@@ -305,10 +313,11 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 				$session_data = $this->session->userdata('logged_in');
 				$data['perfil_id'] = $session_data['perfil_id'];
 				$data['nombre'] = $session_data['nombre'];
+				$data['apellido'] = $session_data['apellido'];
 
 				$this->load->view('front/header_view', $data);
 				$this->load->view('front/navbar_view');
-				// $this->load->view('back/productos/modificaproducto_view', $dat);
+				$this->load->view('tablas/modificaproducto_view', $dat);
 				$this->load->view('front/footer_view');
 			}
 			else
@@ -349,7 +358,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			if (!empty($_FILES['filename']['name']))
 			{            
 				// Especifica la configuración para el archivo
-				$config['upload_path'] = 'img/productos/';
+				$config['upload_path'] = 'assets/img/productos/';
 				$config['allowed_types'] = 'gif|jpg|jpeg|png';
 
 				$config['max_size'] = '2048';
@@ -365,14 +374,14 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 					$data = $this->upload->data();
 
 						// Path donde guarda el archivo..
-					$url ="img/productos/".$_FILES['filename']['name'];
+					$url ="assets/img/productos/".$_FILES['filename']['name'];
 
 						// Agrego la imagen si se modifico.  
 					$dat['imagen']=$url;
 
 						// Actualiza datos del libro
 					$this->producto_model->update_producto($id, $dat);
-					redirect('productos_todos', 'refresh');
+					redirect('productos', 'refresh');
 				}
 				else
 				{
@@ -385,7 +394,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			else
 			{
 				$this->producto_model->update_producto($id, $dat);
-				redirect('productos_todos', 'refresh');
+				redirect('productos', 'refresh');
 			}
 		}
 
@@ -400,7 +409,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			);
 
 			$this->producto_model->estado_producto($id, $data);
-			redirect('productos_todos', 'refresh');
+			redirect('productos', 'refresh');
 		}
 
 		/**
@@ -413,7 +422,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			);
 
 			$this->producto_model->estado_producto($id, $data);
-			redirect('productos_todos', 'refresh');
+			redirect('productos', 'refresh');
 		}
 
 		/**
@@ -426,14 +435,15 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			$session_data = $this->session->userdata('logged_in');
 			$data['perfil_id'] = $session_data['perfil_id'];
 			$data['nombre'] = $session_data['nombre'];
-			
+			$data['apellido'] = $session_data['apellido'];
+
 			$dat = array(
 				'productos' => $this->producto_model->not_active_productos()
 			);
 
 			$this->load->view('front/header_view', $data);
-			$this->load->view('front/menu_view');
-			//$this->load->view('back/productos/muestraeliminados_view', $dat);
+			$this->load->view('front/navbar_view');
+			$this->load->view('tablas/muestraeliminados_view', $dat);
 			$this->load->view('front/footer_view');
 			}else{
 			redirect('login', 'refresh');}

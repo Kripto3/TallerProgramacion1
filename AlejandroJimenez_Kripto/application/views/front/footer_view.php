@@ -45,6 +45,7 @@
       <script src="<?php echo base_url('assets/js/general.js');?>"></script>
       <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
       <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+      <script src="https://cdn.datatables.net/plug-ins/1.10.21/i18n/Spanish.json"></script>
     </footer>
     <!-- campo opcional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS  -->

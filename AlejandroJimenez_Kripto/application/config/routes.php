@@ -31,3 +31,14 @@ $route['logout']= 'back/panel_controller/logout';
 
 //rutas para los productos 
 $route['productos']= 'back/producto_controller/index';
+$route['alta_producto']= 'back/producto_controller/form_agrega_producto';
+$route['verifico_modificaproducto/(:num)']='back/producto_controller/modificar_producto/$1';
+
+//ruta para verificar datos del formulario
+$route['verifico_nuevoproducto']= 'back/producto_controller/agrega_producto';
+$route['modifica_producto/(:num)']='back/producto_controller/muestra_modificar/$1';
+
+//ruta para verificar datos del producto(BAJA)
+$route['baja_producto/(:num)']='back/producto_controller/eliminar_producto/$1';
+$route['activa_producto/(:num)']='back/producto_controller/activar_producto/$1';
+$route['productos_eliminados']='back/producto_controller/muestra_eliminados';

@@ -42,6 +42,8 @@
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="<?php echo base_url('catalogo');?>">Usuarios</a>
                 <a class="dropdown-item" href="<?php echo base_url('productos');?>">Articulos</a>
+                <a class="dropdown-item" href="<?php echo base_url('alta_producto');?>">Agregar art</a>
+                
               </div>
           </li>
           <li class="nav-item dropdown">

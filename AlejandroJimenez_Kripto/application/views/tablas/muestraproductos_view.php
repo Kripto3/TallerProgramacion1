@@ -1,6 +1,6 @@
 <?php if (!$productos) { ?>
 
-	<div class="container page-content"">
+	<div class="container page-content">
 		<div class="well">
 			<h1>No hay Productos</h1>
 		</div>
@@ -12,39 +12,41 @@
 
 <?php } else { ?>
 
-		<div class="container page-content"">
-			<h1>TListado de productos</h1>
-
-
+		<div class="container page-content">
+			<h3 class="text-center mt-3">Listado de productos</h3>
 		<br> <br>
-
-	<table id="example" class="table table-striped table-bordered" style="width:100%">
-        <thead>
-            <tr>
-				<th>ID</th>
-				<th>Descripcion</th>
-				<th>Precio Venta</th>
-				<th>Stock</th>
-				<th>Imagen</th>
-				<th>Eliminado</th>
-				<th>Modificar</th>
-            </tr>
-        </thead>
-        <tbody>
-           	<?php foreach($productos->result() as $row)
-				{ 
-					$imagen = $row->imagen;	?>
-					<tr>
-					<td><?php echo $row->id;  ?></td>
-					<td><?php echo $row->descripcion;  ?></td>
-					<td><?php echo $row->categoria_id;  ?></td>
-					<td><?php echo $row->precio_venta;  ?></td>
-					<td><?php echo $row->stock;  ?></td>
-				     <td><img height="80px" src="<?php echo $imagen; ?>"/></td>
-					<td><?php echo $row->eliminado;  ?></td>
-					<td></td>
-				</tr>
-				<?php } ?>
-        </tbody>
-    </table>
+			<a type="button" class="btn btn-success" href="<?php echo base_url('alta_producto'); ?>">Agregar</a>
+            <a type="button" class="btn btn-danger" href="<?php echo base_url('productos_eliminados'); ?>">ELIMINADOS</a>
+			<table id="example" class="table table-striped table-bordered" style="width:100%">
+		        <thead>
+		            <tr>
+						<th>ID</th>
+						<th>Descripcion</th>
+						<th>Categoria</th>
+						<th>Precio de Venta</th>
+						<th>Stock</th>
+						<th>Imagen</th>
+						<th>Eliminado</th>
+						<th>Acciones</th>
+		            </tr>
+		        </thead>
+		        <tbody>
+		           	<?php foreach($productos->result() as $row)
+						{ 
+							$imagen = $row->imagen;	
+							$id = $row->id;	?>
+							<tr>
+							<td><?php echo $id;  ?></td>
+							<td><?php echo $row->descripcion;  ?></td>
+							<td><?php echo $row->categoria_id;  ?></td>
+							<td><?php echo $row->precio_venta;  ?></td>
+							<td><?php echo $row->stock;  ?></td>
+						    <td><img height="80px" src="<?php echo $imagen; ?>"/></td>
+							<td><?php echo $row->eliminado;  ?></td>
+							<td><a href="<?php echo base_url("modifica_producto/$id");?>">Modificar</a> | <a href="<?php echo base_url("baja_producto/$id");?>">Eliminar</a></td>
+						   </tr>
+						<?php } ?>
+		        </tbody>
+		    </table>
+		</div>
 <?php } ?>
