@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>KRIPTO | <?php echo($titulo);?></title> 
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo base_url('assets/img/iconos/favicon-32x32.png');?> ">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url('assets/img/iconos/favicon-16x16.png');?> ">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.css');?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/general.css');?>">
