@@ -55,7 +55,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			$data['nombre'] = $session_data['nombre'];
 			$data['apellido'] = $session_data['apellido'];
 
-			$dat = array('productos' => $this->producto_model->get_electrodomesticos() );
+			$dat = array('productos' => $this->producto_model->get_escritorios() );
 
 			$this->load->view('front/header_view', $data);
 			$this->load->view('front/navbar_view', $data);
@@ -78,7 +78,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			$data['nombre'] = $session_data['nombre'];
 			$data['apellido'] = $session_data['apellido'];
 
-			$dat = array('productos' => $this->producto_model->get_muebles() );
+			$dat = array('productos' => $this->producto_model->get_notebooks() );
 
 			$this->load->view('front/header_view', $data);
 			$this->load->view('front/navbar_view');
@@ -192,7 +192,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 					// Array de datos para insertar en productos
 					$data = array(
 						'descripcion'=>$this->input->post('descripcion',true),
-						'categoria_id'=>$this->input->post('categoria_id',true),
+						'categoria_id'=> $_POST['Categoria'], // Obtener el valos del select por su nombre 
 						'imagen'=>$url,
 						'precio_costo'=>$this->input->post('precio_costo',true),
 						'precio_venta'=>$this->input->post('precio_venta',true),

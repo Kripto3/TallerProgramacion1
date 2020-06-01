@@ -4,6 +4,9 @@
 		<h6> <b>Acepta imagenes gif, jpg, jpeg, png</b></h6>
 		<h6> <b>Tamaño maximo de la imagen 2MB</b></h6>	
 	</div>
+	<div class="col-lg-4  mb-3">
+		Ir al listado de  <a class="" href="<?php echo base_url('productos');?>">Art&iacute;culos</a>
+	</div>
 	
 	<div class="row">
 		<div class="col-lg-8">
@@ -16,7 +19,7 @@
 									['class' => 'form-group', 'role' => 'form', 'id' => 'form_registro']); ?>
 				<fieldset>
 					<div class="form-group">
-						<label class="col-lg-2 control-label">Descripción</label>
+						<label class="col-lg-2 control-label">Descripción<strong class="text-danger"> *</strong></label>
 						<div class="col-lg-10">
 							<?php echo form_input(['name' => 'descripcion', 
 													'id' => 'descripcion', 
@@ -27,17 +30,31 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-lg-2 control-label">Categoría</label>
-						<div class="col-lg-10">
-							<?php echo form_input(['name' => 'categoria_id', 
-													'id' => 'categoria_id', 
-													'class' => 'form-control',
-													'placeholder' => '1- Electrodomesticos - 2-Muebles', 
-													'value'=>set_value('categoria_id')]); ?>
-						</div>
+					<label class="col-lg-2 control-label">Categoría<strong class="text-danger"> *</strong></label>
+
+					<?php
+					//Mejorar : obtener el listado de categorias directo del controller 
+						$options = [
+								'100'  => 'Escritorio',
+								'101'    => 'Notebook',
+								'102'  => 'Mouse',
+								'103' => 'Auriculares',
+								'104' => 'Teclado',
+								'105' => 'Monitor'
+						];
+						$propiedades = [
+								'name' => 'categoria_id', 
+								'id' => 'categoria_id', 
+								'class' =>'form-control col-lg-6 ml-3',
+								'value'=>set_value('categoria_id')
+						];
+					
+						$shirts_on_sale = ['med'];
+						
+						echo form_dropdown('Categoria', $options, $shirts_on_sale, $propiedades);?>
 					</div>
 					<div class="form-group">
-						<label class="col-lg-2 control-label">Precio Costo</label>
+						<label class="col-lg-3 control-label">Precio Costo<strong class="text-danger"> *</strong></label>
 						<div class="col-lg-10">
 							<?php echo form_input(['name' => 'precio_costo', 
 													'id' => 'precio_costo', 
@@ -47,7 +64,7 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-lg-2 control-label">Precio Venta</label>
+						<label class="col-lg-3 control-label">Precio Venta<strong class="text-danger"> *</strong></label>
 						<div class="col-lg-10">
 							<?php echo form_input(['name' => 'precio_venta', 
 													'id' => 'precio_venta', 
@@ -57,7 +74,7 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-lg-2 control-label">Stock</label>
+						<label class="col-lg-2 control-label">Stock<strong class="text-danger"> *</strong></label>
 						<div class="col-lg-10">
 							<?php echo form_input(['name' => 'stock', 
 													'id' => 'stock', 
@@ -67,7 +84,7 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-lg-2 control-label">Stock Minimo</label>
+						<label class="col-lg-3 control-label">Stock Minimo<strong class="text-danger"> *</strong></label>
 						<div class="col-lg-10">
 							<?php echo form_input(['name' => 'stock_min', 
 													'id' => 'stock_min', 
@@ -86,10 +103,15 @@
 
 						</div>
 					</div>
-					<div class="col-lg-3 col-lg-offset-5">
-						<?php echo form_submit('submit', 'Cargar',"class='btn btn-lg btn-primary btn-block'"); ?> <br>
-						<?php echo form_close(); ?>
+					<div class="container">	
+						<div class="row">
+							<div class="col-lg-3 col-lg-offset-5">
+									<?php echo form_submit('submit', 'Cargar',"class='btn btn-lg btn-primary btn-block'"); ?> 
+									<?php echo form_close(); ?>
+							</div>
+						</div>
 					</div>
+
 				</fieldset>
 				
 			</div>

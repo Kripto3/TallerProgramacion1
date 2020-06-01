@@ -40,9 +40,10 @@
     			</div>
     		</div>
     	</div>
-      <script src="<?php echo base_url('assets/js/jquery-3.4.1.js');?>"></script>   
-      <script src="<?php echo base_url('assets/js/bootstrap.js');?>"></script>
+      <script src="<?php echo base_url('assets/js/jquery-3.4.1.js');?>"></script> 
       <script src="<?php echo base_url('assets/js/general.js');?>"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+       <script src="<?php echo base_url('assets/js/bootstrap.js');?>"></script>
       <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
       <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
       <script src="https://cdn.datatables.net/plug-ins/1.10.21/i18n/Spanish.json"></script>

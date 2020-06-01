@@ -43,10 +43,14 @@
 							<td><?php echo $row->stock;  ?></td>
 						    <td><img height="80px" src="<?php echo $imagen; ?>"/></td>
 							<td><?php echo $row->eliminado;  ?></td>
-							<td><a href="<?php echo base_url("modifica_producto/$id");?>">Modificar</a> | <a href="<?php echo base_url("baja_producto/$id");?>">Eliminar</a></td>
+							<td>
+								<a class="dropdown-item" href="<?php echo base_url("modifica_producto/$id");?>"><i class="fa fa-edit"></i> Modificar</a> 
+								<a class="dropdown-item" href="<?php echo base_url("baja_producto/$id");?>"><i class="fa fa-trash"></i> Eliminar</a>
+							</td>
 						   </tr>
 						<?php } ?>
 		        </tbody>
 		    </table>
+		    <br>	<br>	
 		</div>
 <?php } ?>

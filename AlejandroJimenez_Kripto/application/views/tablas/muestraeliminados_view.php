@@ -8,7 +8,7 @@
 
 <?php } else { ?>
 
-	<div class="container">
+	<div class="container page-content">
 		<div class="well">
 			<h1>Todos los Eliminados</h1>
 		</div>	
