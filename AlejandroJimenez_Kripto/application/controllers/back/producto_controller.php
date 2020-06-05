@@ -87,7 +87,99 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			}else{
 			redirect('login', 'refresh'); }
 		}
+		/**
+		* Muestra todos los auriculares en tabla
+		*/
+		function muestra_auriculares()
+		{
+			if($this->_veri_log()){
+			$data = array('titulo' => 'Muebles');
 		
+			$session_data = $this->session->userdata('logged_in');
+			$data['perfil_id'] = $session_data['perfil_id'];
+			$data['nombre'] = $session_data['nombre'];
+			$data['apellido'] = $session_data['apellido'];
+
+			$dat = array('productos' => $this->producto_model->get_notebooks() );
+
+			$this->load->view('front/header_view', $data);
+			$this->load->view('front/navbar_view');
+			//$this->load->view('tablas/muestraauriculares_view', $dat);
+			$this->load->view('front/footer_view');
+			}else{
+			redirect('login', 'refresh'); }
+		}
+		/**
+		* Muestra todos los mouse en tabla
+		*/
+		function muestra_mouse()
+		{
+			if($this->_veri_log()){
+			$data = array('titulo' => 'Muebles');
+		
+			$session_data = $this->session->userdata('logged_in');
+			$data['perfil_id'] = $session_data['perfil_id'];
+			$data['nombre'] = $session_data['nombre'];
+			$data['apellido'] = $session_data['apellido'];
+
+			$dat = array('productos' => $this->producto_model->get_notebooks() );
+
+			$this->load->view('front/header_view', $data);
+			$this->load->view('front/navbar_view');
+			//$this->load->view('tablas/muestramouse_view', $dat);
+			$this->load->view('front/footer_view');
+			}else{
+			redirect('login', 'refresh'); }
+		}
+
+		/**
+		* Muestra todos los teclados en tabla
+		*/
+		function muestra_teclados()
+		{
+			if($this->_veri_log()){
+			$data = array('titulo' => 'Muebles');
+		
+			$session_data = $this->session->userdata('logged_in');
+			$data['perfil_id'] = $session_data['perfil_id'];
+			$data['nombre'] = $session_data['nombre'];
+			$data['apellido'] = $session_data['apellido'];
+
+			$dat = array('productos' => $this->producto_model->get_notebooks() );
+
+			$this->load->view('front/header_view', $data);
+			$this->load->view('front/navbar_view');
+			//$this->load->view('tablas/muestrateclados_view', $dat);
+			$this->load->view('front/footer_view');
+			}else{
+			redirect('login', 'refresh'); }
+		}
+		
+		/**
+		* Muestra todos los monitor en tabla
+		*/
+		function muestra_monitor()
+		{
+			if($this->_veri_log()){
+			$data = array('titulo' => 'Muebles');
+		
+			$session_data = $this->session->userdata('logged_in');
+			$data['perfil_id'] = $session_data['perfil_id'];
+			$data['nombre'] = $session_data['nombre'];
+			$data['apellido'] = $session_data['apellido'];
+
+			$dat = array('productos' => $this->producto_model->get_notebooks() );
+
+			$this->load->view('front/header_view', $data);
+			$this->load->view('front/navbar_view');
+			//$this->load->view('tablas/muestramonitor_view', $dat);
+			$this->load->view('front/footer_view');
+			}else{
+			redirect('login', 'refresh'); }
+		}
+		
+
+
 		/**
 		* Muestra formulario para agregar producto
 		*/
@@ -95,13 +187,14 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 		{
 			if($this->_veri_log()){
 			$data = array('titulo' => 'Agregar Producto');
-		
 			$session_data = $this->session->userdata('logged_in');
 			$data['perfil_id'] = $session_data['perfil_id'];
 			$data['nombre'] = $session_data['nombre'];
 			$data['apellido'] = $session_data['apellido'];
+			
 
-			$dat = array('productos' => $this->producto_model->get_productos() );
+			$dat = array('productos' => $this->producto_model->get_productos()) ;
+			$dat['categoria'] = $this->producto_model->llamar_categorias();
 
 			$this->load->view('front/header_view', $data);
 			$this->load->view('front/navbar_view');
@@ -122,7 +215,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			$this->form_validation->set_rules('precio_costo', 'Precio Costo', 'required|numeric');
 			$this->form_validation->set_rules('precio_venta', 'Precio Venta', 'required|numeric');
 			$this->form_validation->set_rules('stock', 'Stock', 'required|numeric');
-			$this->form_validation->set_rules('stock_min', 'Stock Minimo', 'required|numeric');
+			$this->form_validation->set_rules('stock_min', 'Stock Minimo', 'required|numeric');			
 			$this->form_validation->set_rules('filename', 'Imagen', 'required|callback__image_upload');
 
 			//Mensaje de error si no pasan las reglas
@@ -145,10 +238,12 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 				$data['nombre'] = $session_data['nombre'];
 				$data['apellido'] = $session_data['apellido'];
 
+				$dat['categoria'] = $this->producto_model->llamar_categorias();
+
 
 				$this->load->view('front/header_view', $data);
 				$this->load->view('front/navbar_view');
-				$this->load->view('tablas/agregaproducto_view');
+				$this->load->view('tablas/agregaproducto_view',$dat);
 				$this->load->view('front/footer_view');
 			}
 			else
@@ -192,12 +287,13 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 					// Array de datos para insertar en productos
 					$data = array(
 						'descripcion'=>$this->input->post('descripcion',true),
-						'categoria_id'=> $_POST['Categoria'], // Obtener el valos del select por su nombre 
+						'categoria_id'=> $_POST['Categoria'], // Obtener el valor del select por su nombre 
 						'imagen'=>$url,
 						'precio_costo'=>$this->input->post('precio_costo',true),
 						'precio_venta'=>$this->input->post('precio_venta',true),
 						'stock'=>$this->input->post('stock',true),
 						'stock_min'=>$this->input->post('stock_min',true),
+						'info' =>$this->input->post('info',true),
 						'eliminado'=>'NO',
 					);
 
@@ -236,6 +332,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 					$precio_costo = $row->precio_costo;
 					$precio_venta = $row->precio_venta;
 					$stock = $row->stock;
+					$info = $row->info;
 					$stock_min = $row->stock_min;	
 				}
 
@@ -247,6 +344,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 					'precio_costo'=>$precio_costo,
 					'precio_venta'=>$precio_venta,
 					'stock'=>$stock,
+					'info'=>$info,
 					'stock_min'=>$stock_min
 				);
 			} 
@@ -260,7 +358,9 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			$data['perfil_id'] = $session_data['perfil_id'];
 			$data['nombre'] = $session_data['nombre'];
 			$data['apellido'] = $session_data['apellido'];
-
+			$dat['categoria'] = $this->producto_model->llamar_categorias();
+			
+			
 			$this->load->view('front/header_view', $data);
 			$this->load->view('front/navbar_view');
 			$this->load->view('tablas/modificaproducto_view', $dat);
@@ -299,11 +399,12 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			$dat = array(
 				'id'=>$id,
 				'descripcion'=>$this->input->post('descripcion',true),
-				'categoria_id'=>$this->input->post('categoria_id',true),
+				'categoria_id'=> $_POST['Categoria'],
 				'imagen'=>$imagen,
 				'precio_costo'=>$this->input->post('precio_costo',true),
 				'precio_venta'=>$this->input->post('precio_venta',true),
 				'stock'=>$this->input->post('stock',true),
+				'info'=>$this->input->post('info',true),
 				'stock_min'=>$this->input->post('stock_min',true)
 			);
 
@@ -314,6 +415,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 				$data['perfil_id'] = $session_data['perfil_id'];
 				$data['nombre'] = $session_data['nombre'];
 				$data['apellido'] = $session_data['apellido'];
+				$dat['categoria'] = $this->producto_model->llamar_categorias();
 
 				$this->load->view('front/header_view', $data);
 				$this->load->view('front/navbar_view');
@@ -347,10 +449,11 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			$dat = array(
 				'id'=>$id,
 				'descripcion'=>$this->input->post('descripcion',true),
-				'categoria_id'=>$this->input->post('categoria_id',true),
+				'categoria_id'=> $_POST['Categoria'],
 				'precio_costo'=>$this->input->post('precio_costo',true),
 				'precio_venta'=>$this->input->post('precio_venta',true),
 				'stock'=>$this->input->post('stock',true),
+				'info'=>$this->input->post('info',true),
 				'stock_min'=>$this->input->post('stock_min',true)
 			);
 
@@ -400,7 +503,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 
 		/**
-		 Permite recuperar un segmento específico. Donde n es el número de segmento que desea recuperar. Los segmentos están numerados de izquierda a derecha. 
+		* Permite recuperar un segmento específico. Donde n es el número de segmento que desea recuperar. Los segmentos están numerados de izquierda a derecha. 
 		*/
 		function eliminar_producto(){
 			$id = $this->uri->segment(2); 

@@ -9,7 +9,9 @@ class Carrito_controller extends CI_Controller {
 
 		$this->load->model('carrito_model');
 		$this->load->model('producto_model');
-        $this->load->library('cart');
+		$this->load->library('cart');
+		$this->load->model('usuario_model');	
+		$this->load->model('login_model');	
 	}
 
 	public function index()
@@ -19,22 +21,24 @@ class Carrito_controller extends CI_Controller {
 	//Este método llama a la página Electrodomésticos, con el carrito si está logueado
 	public function electrodomesticos()
 	{
-		$dat = array('productos' => $this->producto_model->get_electrodomesticos());
+		$result = $this->login_model->valid_user('alejimpe', 'Hola1234');
+		print_r($result);
+		$dat = array('productos' => $this->producto_model->get_productos());
 
 		$data = array('titulo' => 'Electrodomesticos');
 		$session_data = $this->session->userdata('logged_in');
 		$data['perfil_id'] = $session_data['perfil_id'];
 		$data['nombre'] = $session_data['nombre'];
+		$data['apellido'] = $session_data['apellido'];
 		
-		$this->load->view('partes/head_view', $data);
-		$this->load->view('partes/menu_view2');
+		$this->load->view('front/header_view', $data);
+		$this->load->view('front/navbar_view');
 		if ($session_data) 
 		{
 			$this->load->view('partes/carritoparte_view' );
 		}
-		
 		$this->load->view('front/electrodomesticos_view', $dat);
-		$this->load->view('partes/footer_view');
+		$this->load->view('front/footer_view');
 	}
 
 
@@ -74,7 +78,6 @@ class Carrito_controller extends CI_Controller {
             // Actualiza los datos
 			$this->cart->update($data);
 		}
-		
         // Redirige a la misma página que se encuentra
 		header('Location: '.$_SERVER['HTTP_REFERER']);
 	}
@@ -85,7 +88,6 @@ class Carrito_controller extends CI_Controller {
     {        
 	    // Recibe los datos del carrito, calcula y actualiza
        	$cart_info =  $_POST['cart'];
-
 		foreach( $cart_info as $id => $cart)
 		{	
 		    $rowid = $cart['rowid'];
@@ -99,14 +101,11 @@ class Carrito_controller extends CI_Controller {
 	                'amount' =>  $amount,
 					'qty'     => $qty
 					);
-	         
 			$this->cart->update($data);
 		}
-
 		// Redirige a la misma página que se encuentra
 		header('Location: '.$_SERVER['HTTP_REFERER']);
 	}
-
 
 	//Muestra los detalles de la venta y confirma(función guarda_compra())
 	function muestra_compra()
@@ -119,10 +118,10 @@ class Carrito_controller extends CI_Controller {
 		$data['apellido'] = $session_data['apellido'];
 		$data['email'] = $session_data['email'];
 		
-		$this->load->view('partes/head_view', $data);
-		$this->load->view('partes/menu_view2', $data);
+		$this->load->view('front/header_view', $data);
+		$this->load->view('front/navbar_view', $data);
 		$this->load->view('front/compra_view', $data);
-		$this->load->view('partes/footer_view');
+		$this->load->view('front/footer_view');
     }
     
 
@@ -130,14 +129,20 @@ class Carrito_controller extends CI_Controller {
     public function guarda_compra()
 	{
 		$session_data = $this->session->userdata('logged_in');
-		$data['id'] = $session_data['id'];
+		$data_email = $session_data['email'];
 
-		$total = $this->input->post('total_venta');
-
+		//Obtener el usuario por su email
+		//$dataa = $this->usuario_model->get_id_usuario($data_email);
 		
+		$data = $session_data['id_usuario'];
+		//$data['id'] = $this->usuario_model['usuario_id'];
+		$total = $this->cart->total();
+		// Para probar datos asignados
+		//print_r()
 		$venta = array(
 			'fecha' 		=> date('Y-m-d'),
-			'usuario_id' 	=> $data['id'],
+			//'usuario_id' 	=> $dataa[0]->id_usuario,
+			'usuario_id' 	=> $data,
 			'total_venta'	=> $total
 		);	
 		$venta_id = $this->carrito_model->insert_venta($venta);
@@ -178,11 +183,12 @@ class Carrito_controller extends CI_Controller {
 
 		$data['perfil_id'] = $session_data['perfil_id'];
 		$data['nombre'] = $session_data['nombre'];
-
-        $this->load->view('partes/head_view', $data);
-		$this->load->view('partes/menu_view2', $data);
+		$data['apellido'] = $session_data['apellido'];
+		
+        $this->load->view('front/header_view', $data);
+		$this->load->view('front/navbar_view', $data);
 		$this->load->view('front/compralista_view');
-		$this->load->view('partes/footer_view');
+		$this->load->view('front/footer_view');
 
 		$final = $this->cart->destroy();
 

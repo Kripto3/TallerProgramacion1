@@ -132,4 +132,17 @@ class Producto_model extends CI_Model{
             return FALSE;
         }
     }
+
+    	/**
+		 * Llamar categorias
+		 */
+
+		 function llamar_categorias()
+		 {
+			$this->db->select('*');
+			$this->db->from('categorias');
+            
+            $query = $this->db->get();
+            return $query->result();
+		 }	
 } 

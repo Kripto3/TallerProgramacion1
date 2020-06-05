@@ -27,7 +27,7 @@
                     <td>Precio</td>
                     <td>Cantidad</td>
                     <td>Total</td>
-                    <td>Cancelar Producto</td>
+                    <td>Accion</td>
                 </tr>
 
             <?php // Crea un formulario y manda los valores a carrito_controller/actualiza carrito
@@ -43,27 +43,15 @@
                     echo form_hidden('cart[' . $item['id'] . '][qty]', $item['qty']);
             ?>
                     <tr>
-                        <td>
-                            <?php echo $i++; ?>
-                        </td>
-                        <td>
-                            <?php echo $item['name']; ?>
-                        </td>
-                        <td>
-                            $ <?php echo number_format($item['price'], 2); ?>
-                        </td>
-                        <td>
-                            <?php echo form_input('cart[' . $item['id'] . '][qty]', $item['qty'], 
+                        <td> <?php echo $i++; ?></td>
+                        <td><?php echo $item['name']; ?></td>
+                        <td> $ <?php echo number_format($item['price'], 2); ?></td>
+                        <td> <?php echo form_input('cart[' . $item['id'] . '][qty]', $item['qty'], 
                                                     'maxlength="3" size="1" style="text-align: right"'); ?>
-                        </td>
-                            <?php $gran_total = $gran_total + $item['subtotal']; ?>
-                        <td>
-                            $ <?php echo number_format($item['subtotal'], 2) ?>
-                        </td>
-                        <td> 
-                            <?php // Imagen
-                                $path = '<img src= '. base_url('img/cart_cross.jpg') . ' width="25px" height="20px">';
-                                echo anchor('carrito_elimina/' . $item['rowid'], $path); 
+                        </td> 
+                        <?php $gran_total = $gran_total + $item['subtotal']; ?>
+                        <td>$ <?php echo number_format($item['subtotal'], 2) ?></td>
+                        <td> <?php $path = '<i class="fa fa-trash text-primary"> Quitar producto</i>'; echo anchor('borra_carrito/'.$item['rowid'], $path); 
                             ?>
                         </td>
                     </tr>
@@ -81,8 +69,8 @@
                     </td> 
                     <td colspan="5" align="right">
                         <!-- Borrar carrito usa mensaje de confirmacion javascript implementado en partes/head_view -->
-                        <input type="button" class ='btn btn-primary btn-lg' value="Borrar Carrito" onclick="borra_carrito()">
-                        <!-- Submit boton. Actualiza los datos en el carrito -->
+                        <a href="<?php echo base_url('borra_carrito/all');?>" class ='btn btn-primary btn-lg' >Vaciar carrito</a>
+                        <!-- Submit boton. Actualiza los datos en el carrito -->    
                         <input type="submit" class ='btn btn-primary btn-lg' value="Actualizar">
                         <!-- " Confirmar orden envia a carrito_controller/muestra_compra  -->
                         <input type="button" class ='btn btn-primary btn-lg' value="Confirmar Orden" onclick="window.location = 'comprar'">

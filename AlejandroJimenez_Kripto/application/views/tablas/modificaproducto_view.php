@@ -24,12 +24,24 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<?php echo form_label('Categoria:', 'categoria_id'); ?>	
-					<?php echo form_input(['name' => 'categoria_id', 
-													'id' => 'categoria_id', 
-													'class' => 'form-control',
-													'placeholder' => '1- Electrodomesticos - 2-Muebles', 
-													'value'=>"$categoria_id"]); ?>
-					<?php echo form_error('categoria_id'); ?>
+					<?php
+					
+					$lista[$categoria_id] = '';
+					//print_r($categoria_id);
+					foreach ($categoria as $row){
+							$lista[$row->id] = $row->descripcion;
+					}
+						$propiedades = [
+								'name' => 'categoria_id', 
+								'id' => 'categoria_id', 
+								'class' =>'form-control col-lg-6 ml-3',
+								'value'=> "$categoria_id"
+						];
+					
+						$med = ['med'];
+						
+						echo form_dropdown('Categoria', $lista, $med, $propiedades);
+						?> 
 				</div>
 			</div>
 		</div>
@@ -80,7 +92,7 @@
 					<?php echo form_error('stock_min'); ?>
 				</div>
 			</div>
-		</div>
+		</div>		
 		<div class="row">
 			<div class="col-md-6">
 				<div class="form-group">
@@ -88,6 +100,16 @@
 					<img  id="imagen_view" name="imagen_view" class="img-thumbnail" src="<?php  echo base_url($imagen); ?>" >
 				</div>	
 			</div>
+			<div class="col-md-6">
+				<?php echo form_label('Infomacion:', 'info'); ?>
+				<?php echo form_textarea(['name' => 'info', 
+													'id' => 'info', 
+													'class' => 'form-control',
+													'placeholder' => 'Informacion',
+													'value'=>"$info"]); ?>
+			</div>
+		</div>
+		<div class="row">
 			<div class="col-md-6">
 				<div class="form-group">
 					<?php echo form_label('Imagen:', 'imagen'); ?>

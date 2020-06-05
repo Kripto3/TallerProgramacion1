@@ -41,13 +41,13 @@ class Login_controller extends CI_Controller{
 
         //consultamos a la base e con el username y password 
 		$result = $this->login_model->valid_user($username, $password);
-
+		
 		if($result)
 		{	// si pasa la validacion guardamos los datos obtenidos en la variable seccion
 			$sess_array = array();
 			foreach($result as $row)
 			{
-				$sess_array = array('id' => $row->id,
+				$sess_array = array('id_usuario' => $row->id_usuario,
 									'username' => $row->username,
 									'nombre' => $row->nombre,
 									'apellido' => $row->apellido,

@@ -27,6 +27,7 @@
 						<th>Stock</th>
 						<th>Imagen</th>
 						<th>Eliminado</th>
+						<th>Informacion</th>
 						<th>Acciones</th>
 		            </tr>
 		        </thead>
@@ -43,6 +44,7 @@
 							<td><?php echo $row->stock;  ?></td>
 						    <td><img height="80px" src="<?php echo $imagen; ?>"/></td>
 							<td><?php echo $row->eliminado;  ?></td>
+							<td><?php echo $row->info;  ?></td>
 							<td>
 								<a class="dropdown-item" href="<?php echo base_url("modifica_producto/$id");?>"><i class="fa fa-edit"></i> Modificar</a> 
 								<a class="dropdown-item" href="<?php echo base_url("baja_producto/$id");?>"><i class="fa fa-trash"></i> Eliminar</a>
@@ -51,6 +53,6 @@
 						<?php } ?>
 		        </tbody>
 		    </table>
-		    <br>	<br>	
+		    <br>	<br>		
 		</div>
 <?php } ?>

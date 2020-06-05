@@ -22,6 +22,7 @@
 					<th>Precio Venta</th>
 					<th>Stock</th>
 					<th>Eliminado</th>
+					<th>Informacion</th>
 					<th>Modificar</th>
 				</tr>
 			</thead>
@@ -34,7 +35,11 @@
 					<td><?php echo $row->precio_venta;  ?></td>
 					<td><?php echo $row->stock;  ?></td>
 					<td><?php echo $row->eliminado;  ?></td>
-					<td><a href="<?php echo base_url("modifica_producto/$row->id");?>">Modificar</a>|<a href="<?php echo base_url("activa_producto/$row->id");?>">Activar</a></td>
+					<td><?php echo $row->info;  ?></td>
+					<td>
+					<a href="<?php echo base_url("modifica_producto/$row->id");?>"><i class="fa fa-edit"></i> Modificar</a>					
+						<a href="<?php echo base_url("activa_producto/$row->id");?>"><i class="fa fa-check-circle-o"></i> Activar</a>
+					</td>
 				</tr>
 				<?php } ?>
 			</tbody>

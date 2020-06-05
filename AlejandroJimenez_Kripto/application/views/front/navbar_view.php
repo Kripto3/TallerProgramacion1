@@ -40,9 +40,11 @@
            <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Administraci&oacute;n</a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="<?php echo base_url('catalogo');?>">Usuarios</a>
+                <a class="dropdown-item" href="<?php echo base_url('ver_usuarios');?>">Usuarios</a>
                 <a class="dropdown-item" href="<?php echo base_url('productos');?>">Articulos</a>
                 <a class="dropdown-item" href="<?php echo base_url('alta_producto');?>">Agregar art</a>
+                <a class="dropdown-item" href="<?php echo base_url('mostrar_electrodomesticos');?>">electro</a>
+                
                 
               </div>
           </li>

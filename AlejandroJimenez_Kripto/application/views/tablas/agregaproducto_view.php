@@ -30,28 +30,22 @@
 						</div>
 					</div>
 					<div class="form-group">
-					<label class="col-lg-2 control-label">Categoría<strong class="text-danger"> *</strong></label>
-
-					<?php
-					//Mejorar : obtener el listado de categorias directo del controller 
-						$options = [
-								'100'  => 'Escritorio',
-								'101'    => 'Notebook',
-								'102'  => 'Mouse',
-								'103' => 'Auriculares',
-								'104' => 'Teclado',
-								'105' => 'Monitor'
-						];
-						$propiedades = [
-								'name' => 'categoria_id', 
-								'id' => 'categoria_id', 
-								'class' =>'form-control col-lg-6 ml-3',
-								'value'=>set_value('categoria_id')
-						];
-					
-						$shirts_on_sale = ['med'];
-						
-						echo form_dropdown('Categoria', $options, $shirts_on_sale, $propiedades);?>
+						<label class="col-lg-2 control-label">Categoría<strong class="text-danger"> *</strong></label>
+						<?php
+							$lista['0'] = 'Seleccione categoria';
+							foreach ($categoria as $row){
+								$lista[$row->id] = $row->descripcion;
+							}
+										
+							$propiedades = [
+									'name' => 'categoria_id', 
+									'id' => 'categoria_id', 
+									'class' =>'form-control col-lg-6 ml-3',
+									'value'=>set_value('categoria_id')
+							];
+							$med = ['med'];
+							echo form_dropdown('Categoria', $lista, $med, $propiedades);
+							?>
 					</div>
 					<div class="form-group">
 						<label class="col-lg-3 control-label">Precio Costo<strong class="text-danger"> *</strong></label>
@@ -94,7 +88,17 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-lg-2 control-label">Imagen</label>
+						<label class="col-lg-4 control-label">Informaci&oacute;n</label>
+						<div class="col-lg-10">
+							<?php echo form_textarea(['name' => 'info', 
+													'id' => 'info', 
+													'class' => 'form-control',	
+													'placeholder' => 'Informacion',
+													'value'=>set_value('info')]); ?>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-2 control-label">Imagen<strong class="text-danger"> *</strong></label>
 						<div class="col-lg-10">
 							<?php echo form_input(['type' => 'file',
 													'name' => 'filename', 

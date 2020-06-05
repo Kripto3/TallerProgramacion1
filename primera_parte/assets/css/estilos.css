@@ -1,0 +1,101 @@
+/* Resolución sm */
+@media (min-width: 325px) {
+    .imagencard-sm {
+        height: 129px;
+        width: 129px;    
+    }
+
+    .fuente-sm {
+        font-size: 15px;
+    }
+}
+/*  Resolución md */
+@media (min-width: 992px) {
+    .imagencard-md {
+        height: 300px;
+        width: 300px;
+    }
+
+    .fuente-md {
+        font-size: 20px;
+    }
+}
+/* Resolución lg */
+@media (min-width: 1200px) {
+    .imagencard-lg {
+        height: 250px;
+    }
+
+    .fuente-lg {
+        font-size: 25px;
+    }
+}
+
+
+.fondo{
+    background-image: url("../imagenes/fondo.jpg");
+    background-repeat: repeat;  
+}
+
+.fondo-item{
+    background-image: url("../imagenes/fondo1.jpg");
+    border-radius: 0.25rem;
+}
+
+.fondo-individual{
+    background-image: url("../imagenes/fondoItem.jpg");
+    border-radius: 0.25rem;
+}
+
+.fondo-nav{
+    background-image: url("../imagenes/fondo4.jpg");
+}
+
+.sony{
+    border-color: #007bff;
+    color: #007bff;
+    border-radius: 0.25rem;
+}
+
+.xbox{
+    border-color: #28a745;
+    color: #28a745;
+    border-radius: 0.25rem;
+}
+
+.nintendo{
+    border-color: #dc3545;
+    color: white;
+    border-radius: 0.25rem;
+}
+
+.resaltado a:hover{
+    background-color: #007bff;
+    
+    border-radius: 0.25rem;
+    color: #f8f9fa;
+}
+
+.itemMenu{
+    font-size: 20px;
+    color: #f8f9fa;  
+}
+
+.titulo{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #007bff;
+}
+
+.precio{
+    background-color: #28a745;
+    color:#f8f9fa;
+}
+
+.item-titulo{
+    font-size: 20px;
+}
+
+.icon-size{
+    font-size: 25px;
+    color: #f8f9fa;
+}
