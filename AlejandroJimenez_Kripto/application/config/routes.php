@@ -57,10 +57,20 @@ $route['confirmar_compra']='back/carrito_controller/guarda_compra';
  $route['usuarios_eliminados']='back/usuario_controller/muestra_eliminados';
  $route['agrega_usuarios']='back/usuario_controller/agregar_nuevo_usuario';
  $route['verificar_usuario']='back/usuario_controller/verificar_usuario';
- $route['modificar_usuario']='back/usuario_controller/modificar_usuario';
  
- //baja_logica
+ //acciones para usuario
  $route['baja_usuario/(:num)']='back/usuario_controller/eliminar_usuario/$1';
  $route['activa_usuario/(:num)']='back/usuario_controller/activar_usuario/$1';
+ $route['modificar_usuario/(:num)']='back/usuario_controller/modificar_usuario';
+ $route['verificar_modificar_usuario/(:num)']='back/usuario_controller/verificar_modificar_usuario';
+
+//Consultas
+$route['ver_consultas']='back/consultas_controller';
+$route['ver_archivados']='back/consultas_controller/muestra_eliminados';
+$route['verifico_consultas']='back/consultas_controller/alta_consultas';
+$route['archiva_consulta/(:num)']='back/consultas_controller/archivar_consulta/$1';
+$route['restaurar_consulta/(:num)']='back/consultas_controller/restaurar_consulta/$1';
+
+
 
 //$route['confirmar_compra']='back/carrito_controller/get_id_usuario';

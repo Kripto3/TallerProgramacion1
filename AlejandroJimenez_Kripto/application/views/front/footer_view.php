@@ -9,7 +9,7 @@
     			</div>
     			<div class="col-md-3 mb-3">
     					<div>
-    					   <a class=" text-decoration-none text-body" href="<?php echo base_url('quienes-somos');?>>">Quienes Somos</a>
+    					   <a class=" text-decoration-none text-body" href="<?php echo base_url('quienes-somos');?>">Quienes Somos</a>
     					</div>
 			              <div>
 			                 <a class="text-decoration-none text-body" href="<?php echo base_url('comercial');?>">Comercializacion</a>

@@ -59,7 +59,7 @@ class Usuario_model extends CI_Model {
 	//editar usuario
 	function edit_usuario($id)
 	{
-		$query = $this->db->get_where('usuarios', array('id' => $id),1);
+		$query = $this->db->get_where('usuarios', array('id_usuario' => $id),1);
                 
         if($query->num_rows() == 1) {
             return $query;
@@ -71,7 +71,7 @@ class Usuario_model extends CI_Model {
 	//actualizar usuario
 	function update_usuario($id, $data)
 	{
-		$this->db->where('id', $id);
+		$this->db->where('id_usuario', $id);
         $query = $this->db->update('usuarios', $data);
         if($query) { 
             return TRUE;
@@ -83,7 +83,7 @@ class Usuario_model extends CI_Model {
 	//borrar usuario
 	function delete_usuario($id)
 	{			
-		$this->db->where('id', $id);
+		$this->db->where('id_usuario', $id);
 		$query = $this->db->delete('usuarios'); 
 		return true;	
 	}

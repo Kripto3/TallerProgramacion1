@@ -42,6 +42,7 @@
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="<?php echo base_url('ver_usuarios');?>">Usuarios</a>
                 <a class="dropdown-item" href="<?php echo base_url('productos');?>">Articulos</a>
+                <a class="dropdown-item" href="<?php echo base_url('ver_consultas');?>">ver consultas</a>
                 <a class="dropdown-item" href="<?php echo base_url('alta_producto');?>">Agregar art</a>
                 <a class="dropdown-item" href="<?php echo base_url('mostrar_electrodomesticos');?>">electro</a>
                 
