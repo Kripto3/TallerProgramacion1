@@ -45,33 +45,33 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 		/**
 		* Muestra todos los escritorios en tabla
 		*/
-		function muestra_escritorio()
+		function mostrar_auriculares()
 		{
-			if($this->_veri_log()){
-			$data = array('titulo' => 'Electrodomesticos');
-		
+			$dat = array('productos' => $this->producto_model->get_auriculares());
+
+			$data = array('titulo' => 'Auriculares');
 			$session_data = $this->session->userdata('logged_in');
 			$data['perfil_id'] = $session_data['perfil_id'];
 			$data['nombre'] = $session_data['nombre'];
 			$data['apellido'] = $session_data['apellido'];
-
-			$dat = array('productos' => $this->producto_model->get_escritorios() );
-
+			
 			$this->load->view('front/header_view', $data);
-			$this->load->view('front/navbar_view', $data);
-			//$this->load->view('back/productos/muestraelectrodomesticos_view', $dat);
+			$this->load->view('front/navbar_view');
+			if ($session_data) 
+			{
+				$this->load->view('partes/carritoparte_view' );
+			}
+			$this->load->view('productos/mostrarauriculares_view', $dat);
 			$this->load->view('front/footer_view');
-			}else{
-			redirect('login', 'refresh'); }
+
 		}
 
 		/**
 		* Muestra todos los notebooks en tabla
 		*/
-		function muestra_notebooks()
+		function mostrar_notebooks()
 		{
-			if($this->_veri_log()){
-			$data = array('titulo' => 'Muebles');
+			$data = array('titulo' => 'Notebooks');
 		
 			$session_data = $this->session->userdata('logged_in');
 			$data['perfil_id'] = $session_data['perfil_id'];
@@ -82,18 +82,16 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 			$this->load->view('front/header_view', $data);
 			$this->load->view('front/navbar_view');
-			//$this->load->view('tablas/muestramuebles_view', $dat);
+			$this->load->view('productos/mostrarnotebooks_view', $dat);
 			$this->load->view('front/footer_view');
-			}else{
-			redirect('login', 'refresh'); }
+
 		}
 		/**
 		* Muestra todos los auriculares en tabla
 		*/
-		function muestra_auriculares()
+		function mostrar_escritorios()
 		{
-			if($this->_veri_log()){
-			$data = array('titulo' => 'Muebles');
+			$data = array('titulo' => 'Escritorios');
 		
 			$session_data = $this->session->userdata('logged_in');
 			$data['perfil_id'] = $session_data['perfil_id'];
@@ -104,18 +102,16 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 			$this->load->view('front/header_view', $data);
 			$this->load->view('front/navbar_view');
-			//$this->load->view('tablas/muestraauriculares_view', $dat);
+			$this->load->view('productos/mostrarescritorios_view', $dat);
 			$this->load->view('front/footer_view');
-			}else{
-			redirect('login', 'refresh'); }
+
 		}
 		/**
 		* Muestra todos los mouse en tabla
 		*/
-		function muestra_mouse()
+		function mostrar_mouses()
 		{
-			if($this->_veri_log()){
-			$data = array('titulo' => 'Muebles');
+			$data = array('titulo' => 'Mouses');
 		
 			$session_data = $this->session->userdata('logged_in');
 			$data['perfil_id'] = $session_data['perfil_id'];
@@ -126,19 +122,17 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 			$this->load->view('front/header_view', $data);
 			$this->load->view('front/navbar_view');
-			//$this->load->view('tablas/muestramouse_view', $dat);
+			$this->load->view('productos/mostrarmouses_view', $dat);
 			$this->load->view('front/footer_view');
-			}else{
-			redirect('login', 'refresh'); }
+
 		}
 
 		/**
 		* Muestra todos los teclados en tabla
 		*/
-		function muestra_teclados()
+		function mostrar_teclados()
 		{
-			if($this->_veri_log()){
-			$data = array('titulo' => 'Muebles');
+			$data = array('titulo' => 'Teclados');
 		
 			$session_data = $this->session->userdata('logged_in');
 			$data['perfil_id'] = $session_data['perfil_id'];
@@ -149,19 +143,17 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 			$this->load->view('front/header_view', $data);
 			$this->load->view('front/navbar_view');
-			//$this->load->view('tablas/muestrateclados_view', $dat);
+			$this->load->view('productos/mostrarteclados_view', $dat);
 			$this->load->view('front/footer_view');
-			}else{
-			redirect('login', 'refresh'); }
+
 		}
 		
 		/**
 		* Muestra todos los monitor en tabla
 		*/
-		function muestra_monitor()
+		function mostrar_monitores()
 		{
-			if($this->_veri_log()){
-			$data = array('titulo' => 'Muebles');
+			$data = array('titulo' => 'Monitores');
 		
 			$session_data = $this->session->userdata('logged_in');
 			$data['perfil_id'] = $session_data['perfil_id'];
@@ -172,10 +164,9 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 			$this->load->view('front/header_view', $data);
 			$this->load->view('front/navbar_view');
-			//$this->load->view('tablas/muestramonitor_view', $dat);
+			$this->load->view('productos/mostrarmonitores_view', $dat);
 			$this->load->view('front/footer_view');
-			}else{
-			redirect('login', 'refresh'); }
+
 		}
 		
 

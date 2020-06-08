@@ -7,7 +7,6 @@ $route['default_controller'] = 'welcome';
 $route['principal']= 'welcome/index';
 $route['comercial']= 'welcome/comercializacion';
 $route['informacion']= 'welcome/informacion';
-$route['catalogo']= 'welcome/catalogo';
 $route['quienes-somos']= 'welcome/quienesSomos';
 $route['consultas']= 'welcome/consultas';
 $route['terminos-y-condiciones']= 'welcome/terminos';
@@ -35,13 +34,22 @@ $route['verifico_modificaproducto/(:num)']='back/producto_controller/modificar_p
 $route['verifico_nuevoproducto']= 'back/producto_controller/agrega_producto';
 $route['modifica_producto/(:num)']='back/producto_controller/muestra_modificar/$1';
 
+//rutas para los productos por categoria
+$route['productos/auriculares']= 'back/producto_controller/mostrar_auriculares';
+$route['productos/mouse']= 'back/producto_controller/mostrar_mouses';
+$route['productos/teclado']= 'back/producto_controller/mostrar_teclados';
+$route['productos/monitor']= 'back/producto_controller/mostrar_monitores';
+$route['productos/notebook']= 'back/producto_controller/mostrar_notebooks';
+$route['productos/escritorio']= 'back/producto_controller/mostrar_escritorios';
+
+
 //ruta para verificar datos del producto(BAJA)
 $route['baja_producto/(:num)']='back/producto_controller/eliminar_producto/$1';
 $route['activa_producto/(:num)']='back/producto_controller/activar_producto/$1';
 $route['productos_eliminados']='back/producto_controller/muestra_eliminados';
 
 //ruta para Carrito
-$route['mostrar_electrodomesticos']= 'back/carrito_controller/electrodomesticos';
+$route['catalogo']= 'back/carrito_controller/productos';
 //$route['electrodomesticos']='back/carrito_controller/electrodomesticos'; ES EL DE ARRIBA
 $route['carrito_agrega']='back/carrito_controller/add';
 $route['carrito_actualiza']='back/carrito_controller/actualiza_carrito';

@@ -1,5 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,200');
+@import url('https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');
+
 html,body{
       height: 100%;
+      width: 100%;
+      width: 100vw;
+      height: 100%;
+      height: 100vh;
+      background-color:  #f8f9fa !important;
 }
 
 body {
@@ -8,12 +16,23 @@ body {
   
 }
 
+
 @font-face {
-    font-family: 'Open Sans', Regular;
+    font-family: 'Open Sans', 'Regular';
 }
 
+/*css para el navbar */
+
+/**/
+
 .bg-green{
-	background-color: #cce8cd !important;
+	background-color: #17a2b8 !important;
+}
+
+.bg-imagen-consultas{
+  background-image: url('/assets/img/fondos/fondo-color.jpg');
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .z-index-2{
@@ -108,6 +127,16 @@ body {
   top: calc(50% - 3px);
 }
 
+/*catalogo*/
+.max-w-80{
+  max-width: 80%;
+}
+
+.card-title-categorias{
+  font-weight: 300;
+    line-height: 1.2;
+}
+
 /*css para el login*/
 .login,
 .image {
@@ -121,9 +150,21 @@ body {
 }
 
 
+@media (min-width: 768px) {
+  .navbar-right .dropdown-menu {
+    left: auto;
+    right: 0;
+  }
+  .navbar-right .dropdown-menu-left {
+    left: 0;
+    right: auto;
+  }
+}
+
 /*FIN css para el login*/
 @media (max-width: 768px){
     .img-center{
         text-align: center;
     }
 }
+

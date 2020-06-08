@@ -1,6 +1,6 @@
 <section  class="mt-4 page-content">
   <div class="container">
-    <h2 class="text-center">Registrarme</h3>
+    <h2 class="display-4 text-center">Registrarse</h3>
     <hr class="my-4 ">
     <div class="container">
     <?php  echo validation_errors(); ?>
@@ -12,8 +12,8 @@
         <label for="nombre">Nombre:</label>
         <?php  echo form_input(['name' => 'nombre',
                                 'id' => 'nombre',
-                              'class' => 'form-control',
-                            'placeholder' => 'Nombre',
+                              'class' => 'form-control rounded-pill border-0 shadow-sm',
+                            
                           'required' => 'required',
                         'autofocus' => 'autofocus',
                       'value' => set_value('nombre')]); ?>
@@ -22,8 +22,8 @@
         <label for="apellido">Apellido:</label>
         <?php  echo form_input(['name' => 'apellido',
                                 'id' => 'apellido',
-                              'class' => 'form-control',
-                            'placeholder' => 'Apellido',
+                              'class' => 'form-control rounded-pill border-0 shadow-sm',
+                           
                           'required' => 'required',
                       'value' => set_value('apellido')]); ?>
       </div>
@@ -31,8 +31,8 @@
         <label for="username">usuario:</label>
         <?php  echo form_input(['name' => 'username',
                                 'id' => 'username',
-                              'class' => 'form-control',
-                            'placeholder' => 'usuario',
+                              'class' => 'form-control rounded-pill border-0 shadow-sm',
+                            
                           'required' => 'required',
                       'value' => set_value('username')]); ?>
       </div>
@@ -40,8 +40,8 @@
         <label for="email">Email:</label>
         <?php  echo form_input(['name' => 'email',
                                 'id' => 'email',
-                              'class' => 'form-control',
-                            'placeholder' => 'ejemplo@correo.com',
+                              'class' => 'form-control rounded-pill border-0 shadow-sm',
+                            
                           'required' => 'required',
                           'type' => 'email',
                       'value' => set_value('email')]); ?>
@@ -50,7 +50,7 @@
         <label for="password">Contraseña</label>
         <?php  echo form_input(['name' => 'password',
                                 'id' => 'password',
-                                'class' => 'form-control',
+                                'class' => 'form-control rounded-pill border-0 shadow-sm',
                                 'placeholder' => '',
                                 'required' => 'required',
                                 'type' => 'password',
@@ -60,13 +60,13 @@
         <label for="re_password">Repetir Contraseña</label>
         <?php  echo form_input(['name' => 're_password',
                                 'id' => 're_password',
-                              'class' => 'form-control',
+                              'class' => 'form-control rounded-pill border-0 shadow-sm',
                             'placeholder' => '',
                           'required' => 'required',
                            'type' => 'password',
                       'value' => set_value('re_password')]); ?>
       </div>
-     <button class="btn btn-success btnConsultas ml-3">Crear</button>
+     <button class="btn btn-success btnConsultas ml-3 ">Crear</button>
     </div>
   </div>
 </div>

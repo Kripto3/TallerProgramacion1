@@ -45,6 +45,46 @@ class Producto_model extends CI_Model{
             return FALSE;
         }        
     }
+    function get_Mouse()
+    {
+        $query = $this->db->get_where('productos', array('eliminado' => 'NO', 'categoria_id' => '102'));
+        
+        if($query->num_rows()>0) {
+            return $query;
+        } else {
+            return FALSE;
+        }        
+    }
+    function get_auriculares()
+    {
+        $query = $this->db->get_where('productos', array('eliminado' => 'NO', 'categoria_id' => '103'));
+        
+        if($query->num_rows()>0) {
+            return $query;
+        } else {
+            return FALSE;
+        }        
+    }
+    function get_teclados()
+    {
+        $query = $this->db->get_where('productos', array('eliminado' => 'NO', 'categoria_id' => '104'));
+        
+        if($query->num_rows()>0) {
+            return $query;
+        } else {
+            return FALSE;
+        }        
+    }    
+    function get_monitores()
+    {
+        $query = $this->db->get_where('productos', array('eliminado' => 'NO', 'categoria_id' => '105'));
+        
+        if($query->num_rows()>0) {
+            return $query;
+        } else {
+            return FALSE;
+        }        
+    }
 
     /**
     * Inserta un producto

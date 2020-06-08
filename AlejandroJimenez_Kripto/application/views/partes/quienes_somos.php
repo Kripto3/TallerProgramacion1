@@ -1,6 +1,6 @@
 <section class="mt-4 page-content">
   <div class="container">
-    <h2 class="pb-3 pt-2 border-bottom mb-5 text-center">Historia</h2>
+    <h2 class="display-4 pb-3 pt-2 border-bottom mb-5 text-left">Historia</h2>
 
     <div class="row align-items-center how-it-works d-flex">
       <div class="col-2 text-center bottom d-inline-flex justify-content-center align-items-center">

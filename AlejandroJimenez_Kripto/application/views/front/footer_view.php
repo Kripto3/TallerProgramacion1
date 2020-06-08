@@ -9,33 +9,33 @@
     			</div>
     			<div class="col-md-3 mb-3">
     					<div>
-    					   <a class=" text-decoration-none text-body" href="<?php echo base_url('quienes-somos');?>">Quienes Somos</a>
+    					   <a class=" text-decoration-none text-white" href="<?php echo base_url('quienes-somos');?>">Quienes Somos</a>
     					</div>
 			              <div>
-			                 <a class="text-decoration-none text-body" href="<?php echo base_url('comercial');?>">Comercializacion</a>
+			                 <a class="text-decoration-none text-white" href="<?php echo base_url('comercial');?>">Comercializacion</a>
 			              </div>
 			              <div>
-			                 <a class=" text-decoration-none text-body" href="<?php echo base_url('catalogo');?>">Cat&aacute;logo</a>
+			                 <a class=" text-decoration-none text-white" href="<?php echo base_url('catalogo');?>">Cat&aacute;logo</a>
 			              </div>
 
     			</div>
     			<div class="col-md-3  mb-3">
     				<div>
-              			<a class="text-decoration-none text-body" href="<?php echo base_url('informacion');?>">Contactos</a>
+              			<a class="text-decoration-none text-white" href="<?php echo base_url('informacion');?>">Contactos</a>
 			         </div>
 			         <div>
-              				<a class="text-decoration-none text-body" href="<?php echo base_url('consultas');?>">Consultas</a>
+              				<a class="text-decoration-none text-white" href="<?php echo base_url('consultas');?>">Consultas</a>
 			              </div>
                                              <div>
-                            <a class="text-decoration-none text-body" href="<?php echo base_url('terminos-y-condiciones');?>">Terminos y condiciones</a>
+                            <a class="text-decoration-none text-white" href="<?php echo base_url('terminos-y-condiciones');?>">Terminos y condiciones</a>
                           </div>
 
     			</div>
     			<div class="col-md-3 mb-3">
-    				<h4>Siguenos en:</h4>
-    				<a class="text-decoration-none text-body font-size-20 ml-3" title="Siguenos en Facebook" href="https://www.facebook.com/GM-Kriptonita-Axeso5-432704713595041"><i class="fa fa-facebook-square"></i></a>
-    				<a  class="text-decoration-none text-body font-size-20 ml-3" title="siguenos en Instragram"  href="https://www.instagram.com/kriptoop7/"><i class="fa fa-instagram"></i></a>
-    				<a  class="text-decoration-none text-body font-size-20 ml-3"  title="siguenos en Youtube" href="https://youtube.com/c/ookriptonitaoo3"><i class="fa fa-youtube"></i></a>
+    				<h4 class="text-white">Siguenos en:</h4>
+    				<a class="text-decoration-none text-white font-size-20 ml-3" title="Siguenos en Facebook" href="https://www.facebook.com/GM-Kriptonita-Axeso5-432704713595041"><i class="fa fa-facebook-square text-white"></i></a>
+    				<a  class="text-decoration-none text-white font-size-20 ml-3" title="siguenos en Instragram"  href="https://www.instagram.com/kriptoop7/"><i class="fa fa-instagram"></i></a>
+    				<a  class="text-decoration-none text-white font-size-20 ml-3"  title="siguenos en Youtube" href="https://youtube.com/c/ookriptonitaoo3"><i class="fa fa-youtube"></i></a>
     				
     			</div>
     		</div>

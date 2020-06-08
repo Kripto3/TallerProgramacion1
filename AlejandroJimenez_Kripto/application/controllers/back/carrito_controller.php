@@ -19,13 +19,11 @@ class Carrito_controller extends CI_Controller {
 	}
 
 	//Este método llama a la página Electrodomésticos, con el carrito si está logueado
-	public function electrodomesticos()
+	public function productos()
 	{
-		$result = $this->login_model->valid_user('alejimpe', 'Hola1234');
-		print_r($result);
 		$dat = array('productos' => $this->producto_model->get_productos());
 
-		$data = array('titulo' => 'Electrodomesticos');
+		$data = array('titulo' => 'Productos');
 		$session_data = $this->session->userdata('logged_in');
 		$data['perfil_id'] = $session_data['perfil_id'];
 		$data['nombre'] = $session_data['nombre'];
@@ -37,7 +35,7 @@ class Carrito_controller extends CI_Controller {
 		{
 			$this->load->view('partes/carritoparte_view' );
 		}
-		$this->load->view('front/electrodomesticos_view', $dat);
+		$this->load->view('productos/catalogo_view', $dat);
 		$this->load->view('front/footer_view');
 	}
 
