@@ -134,7 +134,8 @@ body {
 
 .card-title-categorias{
   font-weight: 300;
-    line-height: 1.2;
+  line-height: 1.2;
+  background-color: #aae0f8 !important;
 }
 
 /*css para el login*/

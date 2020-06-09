@@ -1,6 +1,6 @@
 <?php if (!$productos) { ?>
 
-<div class="container">
+<div class="container page-content">
 	<div class="well">
 		<h1 class="text-center display-4">No hay Productos.</h1>
 	</div>	
@@ -8,7 +8,7 @@
 
 <?php } else { ?>
 
-<div class="container-fluid">
+<div class="container-fluid page-content">
 
 <h2 class="text-center display-4">Mouses</h2>
 

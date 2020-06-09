@@ -34,7 +34,7 @@
 						$propiedades = [
 								'name' => 'categoria_id', 
 								'id' => 'categoria_id', 
-								'class' =>'form-control col-lg-6 ml-3',
+								'class' =>'form-control col-lg-6',
 								'value'=> "$categoria_id"
 						];
 					
@@ -101,16 +101,6 @@
 				</div>	
 			</div>
 			<div class="col-md-6">
-				<?php echo form_label('Infomacion:', 'info'); ?>
-				<?php echo form_textarea(['name' => 'info', 
-													'id' => 'info', 
-													'class' => 'form-control',
-													'placeholder' => 'Informacion',
-													'value'=>"$info"]); ?>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-6">
 				<div class="form-group">
 					<?php echo form_label('Imagen:', 'imagen'); ?>
 					<?php echo form_input(['type' => 'file',
@@ -121,6 +111,17 @@
 					<br>
 					<?php echo form_submit('modificar', 'Modificar',"class='btn btn-lg btn-warning btn-block'"); ?>
 				</div>		
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<?php echo form_label('Infomacion:', 'info'); ?>
+				<?php echo form_textarea(['name' => 'info', 
+													'id' => 'info', 
+													'class' => 'form-control',
+													'placeholder' => 'Informacion',
+													'value'=>"$info"]); ?>
+													<?php echo form_error('info'); ?>
 			</div>
 		</div>
 	<?php echo form_close(); ?>

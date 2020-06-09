@@ -50,7 +50,6 @@ $route['productos_eliminados']='back/producto_controller/muestra_eliminados';
 
 //ruta para Carrito
 $route['catalogo']= 'back/carrito_controller/productos';
-//$route['electrodomesticos']='back/carrito_controller/electrodomesticos'; ES EL DE ARRIBA
 $route['carrito_agrega']='back/carrito_controller/add';
 $route['carrito_actualiza']='back/carrito_controller/actualiza_carrito';
 $route['borra_carrito/(:any)']='back/carrito_controller/remove/$1';

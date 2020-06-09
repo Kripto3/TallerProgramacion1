@@ -262,7 +262,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 				$config['max_size'] = '2048';
 				$config['max_width']  = '1024';
-				$config['max_height']  = '768';       
+				$config['max_height']  = '1024';       
  
 				// Inicializa la configuración para el archivo 
 				$this->upload->initialize($config);
@@ -284,8 +284,8 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 						'precio_venta'=>$this->input->post('precio_venta',true),
 						'stock'=>$this->input->post('stock',true),
 						'stock_min'=>$this->input->post('stock_min',true),
-						'info' =>$this->input->post('info',true),
 						'eliminado'=>'NO',
+						'info' =>$this->input->post('info',true)
 					);
 
 					$productos = $this->producto_model->add_producto($data);
@@ -323,8 +323,8 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 					$precio_costo = $row->precio_costo;
 					$precio_venta = $row->precio_venta;
 					$stock = $row->stock;
-					$info = $row->info;
 					$stock_min = $row->stock_min;	
+					$info = $row->info;
 				}
 
 				$dat = array('producto' =>$datos_producto,
@@ -335,8 +335,8 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 					'precio_costo'=>$precio_costo,
 					'precio_venta'=>$precio_venta,
 					'stock'=>$stock,
-					'info'=>$info,
-					'stock_min'=>$stock_min
+					'stock_min'=>$stock_min,
+					'info'=>$info
 				);
 			} 
 			else 
@@ -363,11 +363,11 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 		/**
 		* Verifica datos para modificar un producto
 		*/
+
 		function modificar_producto()
 		{
 			//Validación del formulario
 			$this->form_validation->set_rules('descripcion', 'Descripcion', 'required');
-			$this->form_validation->set_rules('categoria_id', 'Categoria', 'required');
 			$this->form_validation->set_rules('precio_costo', 'Precio Costo', 'required|numeric');
 			$this->form_validation->set_rules('precio_venta', 'Precio Venta', 'required|numeric');
 			$this->form_validation->set_rules('stock', 'Stock', 'required|numeric');
@@ -386,22 +386,22 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			{
 				$imagen = $row->imagen;
 			}
-
 			$dat = array(
 				'id'=>$id,
 				'descripcion'=>$this->input->post('descripcion',true),
-				'categoria_id'=> $_POST['Categoria'],
+				'categoria_id'=> $_POST['Categoria'], // Obtener el valos del select por su nombre 
 				'imagen'=>$imagen,
 				'precio_costo'=>$this->input->post('precio_costo',true),
 				'precio_venta'=>$this->input->post('precio_venta',true),
 				'stock'=>$this->input->post('stock',true),
-				'info'=>$this->input->post('info',true),
-				'stock_min'=>$this->input->post('stock_min',true)
+				'stock_min'=>$this->input->post('stock_min',true),
+				'info'=>$this->input->post('info',true)
 			);
 
 			if ($this->form_validation->run()==FALSE)
 			{
 				$data = array('titulo' => 'Error de formulario');
+
 				$session_data = $this->session->userdata('logged_in');
 				$data['perfil_id'] = $session_data['perfil_id'];
 				$data['nombre'] = $session_data['nombre'];
@@ -429,69 +429,68 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 		*/
 		
 		function _image_modif()
-		{
+	    {
 			//Cargo la libreria para subir archivos
-			$this->load->library('upload');
+	    	$this->load->library('upload');
 
 			// Obtengo el id del libro
-			$id = $this->uri->segment(2);
+	    	$id = $this->uri->segment(2);
 
-			// Array de datos para obtener datos de libros sin la imagen 
-			$dat = array(
+	        // Array de datos para obtener datos de libros sin la imagen 
+	    	$dat = array(
 				'id'=>$id,
 				'descripcion'=>$this->input->post('descripcion',true),
-				'categoria_id'=> $_POST['Categoria'],
+				'categoria_id'=> $_POST['Categoria'], // Obtener el valos del select por su nombre 
 				'precio_costo'=>$this->input->post('precio_costo',true),
 				'precio_venta'=>$this->input->post('precio_venta',true),
 				'stock'=>$this->input->post('stock',true),
-				'info'=>$this->input->post('info',true),
-				'stock_min'=>$this->input->post('stock_min',true)
+				'stock_min'=>$this->input->post('stock_min',true),
+				'info'=>$this->input->post('info',true)
 			);
 
 			// Si la iamgen esta vacia se asume que no se modifica
-			if (!empty($_FILES['filename']['name']))
-			{            
-				// Especifica la configuración para el archivo
-				$config['upload_path'] = 'assets/img/productos/';
-				$config['allowed_types'] = 'gif|jpg|jpeg|png';
+	    	if (!empty($_FILES['filename']['name']))
+	    	{            
+	            // Especifica la configuración para el archivo
+                $config['upload_path'] = 'assets/img/productos/';
+                $config['allowed_types'] = 'gif|jpg|JPEG|png';
 
-				$config['max_size'] = '2048';
-				$config['max_width']  = '1024';
-				$config['max_height']  = '768';       
+                $config['max_size'] = '2048';
+                $config['max_width']  = '1024';
+                $config['max_height']  = '1024';       
 
-				// Inicializa la configuración para el archivo 
-				$this->upload->initialize($config);
+	            // Inicializa la configuración para el archivo 
+	    		$this->upload->initialize($config);
 
-				if ($this->upload->do_upload('filename'))
-				{
-						// Mueve archivo a la carpeta indicada en la variable $data
-					$data = $this->upload->data();
+	    		if ($this->upload->do_upload('filename'))
+	    		{
+	                	// Mueve archivo a la carpeta indicada en la variable $data
+	    			$data = $this->upload->data();
 
 						// Path donde guarda el archivo..
-					$url ="assets/img/productos/".$_FILES['filename']['name'];
+                    $url ="assets/img/productos/".$_FILES['filename']['name'];
 
-						// Agrego la imagen si se modifico.  
-					$dat['imagen']=$url;
+	                 	// Agrego la imagen si se modifico.  
+	    			$dat['imagen']=$url;
 
-						// Actualiza datos del libro
-					$this->producto_model->update_producto($id, $dat);
+						// Actualiza datos
+	    			$this->producto_model->update_producto($id, $dat);
 					redirect('productos', 'refresh');
-				}
-				else
-				{
-						//Mensaje de error si no existe imagen correcta
-					$imageerrors = '<div class="alert alert-danger">El campo %s es incorrecta, extención incorrecto o excede el tamaño permitido que es de: 2MB </div>';
-					$this->form_validation->set_message('_image_modif',$imageerrors );
-					return false;
-				} 
-			}
-			else
-			{
-				$this->producto_model->update_producto($id, $dat);
-				redirect('productos', 'refresh');
-			}
-		}
-
+	    		}
+	    		else
+	    		{
+	                	//Mensaje de error si no existe imagen correcta
+	    			$imageerrors = '<div class="alert alert-danger">El campo %s es incorrecta, extención incorrecto o excede el tamaño permitido que es de: 2MB </div>';
+	    			$this->form_validation->set_message('_image_modif',$imageerrors );
+	    			return false;
+	    		} 
+	    	}
+	    	else
+	    	{
+	    		$this->producto_model->update_producto($id, $dat);
+	    		redirect('productos', 'refresh');
+	    	}
+	    }
 
 		/**
 		* Permite recuperar un segmento específico. Donde n es el número de segmento que desea recuperar. Los segmentos están numerados de izquierda a derecha. 

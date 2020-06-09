@@ -39,7 +39,6 @@
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="<?php echo base_url('ver_usuarios');?>">Listado</a>
                 <a class="dropdown-item" href="<?php echo base_url('ver_consultas');?>">ver consultas</a>
-
               </div>
           </li>
           <li class="nav-item dropdown">

@@ -8,36 +8,33 @@
 
 <?php } else { ?>
 
-<div class="container-fluid">
-	
+<div class="container-fluid page-content">
 	<h2 class="text-center display-4">Cat&aacute;logo</h2>
-
 	<hr>
-
 	<div class="row text-center">
 		<div class="col-md-3">
 				<div class="card" >
-			<div class="card-header card-title-categorias">
+			<div class="card-header card-title-categorias font-weight-bold">
 				Categor&iacute;as
 			</div>
 			<ul class="list-group list-group-flush">
-				<li class="list-group-item">
-					<a href="<?php echo base_url('productos/auriculares');?>">Auriculares</a>
+				<li class="list-group-item bg-info">
+					<a class="text-decoration-none text-white" href="<?php echo base_url('productos/auriculares');?>">Auriculares</a>
 				</li>
-				<li class="list-group-item">
-					<a href="<?php echo base_url('productos/mouse');?>">Mouse</a>
+				<li class="list-group-item bg-info">
+					<a class="text-decoration-none text-white" href="<?php echo base_url('productos/mouse');?>">Mouse</a>
 				</li>
-				<li class="list-group-item">
-					<a href="<?php echo base_url('productos/teclado');?>">Teclado</a>
+				<li class="list-group-item bg-info">
+					<a class="text-decoration-none text-white" href="<?php echo base_url('productos/teclado');?>">Teclado</a>
 				</li>
-				<li class="list-group-item">
-					<a href="<?php echo base_url('productos/monitor');?>">Monitor</a>
+				<li class="list-group-item bg-info">
+					<a class="text-decoration-none text-white" href="<?php echo base_url('productos/monitor');?>">Monitor</a>
 				</li>
-				<li class="list-group-item">
-					<a href="<?php echo base_url('productos/notebook');?>" class="">Notebook</a>
+				<li class="list-group-item bg-info">
+					<a class="text-decoration-none text-white" href="<?php echo base_url('productos/notebook');?>" class="">Notebook</a>
 				</li>
-				<li class="list-group-item">
-					<a href="<?php echo base_url('productos/escritorio');?>" class="">Escritorio</a>
+				<li class="list-group-item bg-info">
+					<a class="text-decoration-none text-white" href="<?php echo base_url('productos/escritorio');?>" class="">Escritorio</a>
 				</li>
 			</ul>
 		</div>

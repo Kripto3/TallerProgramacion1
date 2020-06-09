@@ -1,14 +1,45 @@
 <?php if (!$productos) { ?>
 
-<div class="container">
-	<div class="well">
-		<h1 class="text-center display-4">No hay Productos.</h1>
-	</div>	
+<div class="container-fluid page-content">
+	<h2 class="text-center display-4">Monitores</h2>
+	<hr>
+	<div class="row text-center">
+		<div class="col-md-3">
+			<div class="card" >
+				<div class="card-header font-weight-bold card-title-categorias">
+					Categor&iacute;as
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item bg-info  ">
+						<a class="text-decoration-none text-white" href="<?php echo base_url('productos/auriculares');?>" >Auriculares</a>
+					</li>
+					<li class="list-group-item bg-info">
+						<a class="text-decoration-none text-white" href="<?php echo base_url('productos/mouse');?>">Mouse</a>
+					</li>
+					<li class="list-group-item bg-info">
+						<a class="text-decoration-none text-white" href="<?php echo base_url('productos/teclado');?>">Teclado</a>
+					</li>
+					<li class="list-group-item bg-info">
+						<a class="text-decoration-none text-white" href="<?php echo base_url('productos/monitor');?>">Monitor</a>
+					</li>
+					<li class="list-group-item bg-info">
+						<a class="text-decoration-none text-white" href="<?php echo base_url('productos/notebooks');?>">Notebook</a>
+					</li>
+					<li class="list-group-item ">
+						<a class="text-decoration-none text-white" href="javascript:void(0);">Escritorio</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-9">
+			<h4 class="text-center display-4">Sin stock actualmente.</h4>
+			<img src="<?php echo base_url('assets/img/fondos/agotado.png');?>"/>
+		</div>
+	</div>
 </div>
-
 <?php } else { ?>
 
-<div class="container-fluid">
+<div class="container-fluid page-content">
 
 <h2 class="text-center display-4">Monitores</h2>
 
@@ -21,8 +52,8 @@
 			Categor&iacute;as
 		</div>
 		<ul class="list-group list-group-flush">
-			<li class="list-group-item bg-secondary ">
-				<a href="javascript:void(0);" class="text-decoration-none text-white">Auriculares</a>
+			<li class="list-group-item bg-info">
+				<a class="text-decoration-none text-white" href="<?php echo base_url('productos/auriculares');?>" >Auriculares</a>
 			</li>
 			<li class="list-group-item bg-info">
 				<a class="text-decoration-none text-white" href="<?php echo base_url('productos/mouse');?>">Mouse</a>
@@ -31,13 +62,13 @@
 				<a class="text-decoration-none text-white" href="<?php echo base_url('productos/teclado');?>">Teclado</a>
 			</li>
 			<li class="list-group-item bg-info">
-				<a class="text-decoration-none text-white" href="<?php echo base_url('productos/monitor');?>">Monitor</a>
+				<a class="text-decoration-none text-white" href="javascript:void(0);">">Monitor</a>
 			</li>
 			<li class="list-group-item bg-info">
-				<a class="text-decoration-none text-white" href="<?php echo base_url('productos/notebook');?>" class="">Notebook</a>
+				<a class="text-decoration-none text-white" href="<?php echo base_url('productos/notebooks');?>">Notebook</a>
 			</li>
 			<li class="list-group-item bg-info">
-				<a class="text-decoration-none text-white" href="<?php echo base_url('productos/escritorio');?>" class="">Escritorio</a>
+				<a class="text-decoration-none text-white" href="<?php echo base_url('productos/notebooks');?>">Escritorio</a>
 			</li>
 		</ul>
 	</div>
