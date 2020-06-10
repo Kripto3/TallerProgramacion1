@@ -21,11 +21,11 @@
 			Categor&iacute;as
 		</div>
 		<ul class="list-group list-group-flush">
-			<li class="list-group-item bg-secondary ">
-				<a href="javascript:void(0);" class="text-decoration-none text-white">Auriculares</a>
+			<li class="list-group-item bg-info ">
+				<a  href="<?php echo base_url('productos/auriculares');?>"  class="text-decoration-none text-white">Auriculares</a>
 			</li>
-			<li class="list-group-item bg-info">
-				<a class="text-decoration-none text-white" href="<?php echo base_url('productos/mouse');?>">Mouse</a>
+			<li class="list-group-item bg-secondary">
+				<a class="text-decoration-none text-white" href="javascript:void(0);">Mouse</a>
 			</li>
 			<li class="list-group-item bg-info">
 				<a class="text-decoration-none text-white" href="<?php echo base_url('productos/teclado');?>">Teclado</a>

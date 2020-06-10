@@ -82,6 +82,10 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 			$this->load->view('front/header_view', $data);
 			$this->load->view('front/navbar_view');
+			if ($session_data) 
+			{
+				$this->load->view('partes/carritoparte_view' );
+			}
 			$this->load->view('productos/mostrarnotebooks_view', $dat);
 			$this->load->view('front/footer_view');
 
@@ -98,10 +102,14 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			$data['nombre'] = $session_data['nombre'];
 			$data['apellido'] = $session_data['apellido'];
 
-			$dat = array('productos' => $this->producto_model->get_notebooks() );
+			$dat = array('productos' => $this->producto_model->get_escritorios() );
 
 			$this->load->view('front/header_view', $data);
 			$this->load->view('front/navbar_view');
+			if ($session_data) 
+			{
+				$this->load->view('partes/carritoparte_view' );
+			}
 			$this->load->view('productos/mostrarescritorios_view', $dat);
 			$this->load->view('front/footer_view');
 
@@ -118,10 +126,14 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			$data['nombre'] = $session_data['nombre'];
 			$data['apellido'] = $session_data['apellido'];
 
-			$dat = array('productos' => $this->producto_model->get_notebooks() );
+			$dat = array('productos' => $this->producto_model->get_Mouse() );
 
 			$this->load->view('front/header_view', $data);
 			$this->load->view('front/navbar_view');
+			if ($session_data) 
+			{
+				$this->load->view('partes/carritoparte_view' );
+			}
 			$this->load->view('productos/mostrarmouses_view', $dat);
 			$this->load->view('front/footer_view');
 
@@ -139,10 +151,14 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			$data['nombre'] = $session_data['nombre'];
 			$data['apellido'] = $session_data['apellido'];
 
-			$dat = array('productos' => $this->producto_model->get_notebooks() );
+			$dat = array('productos' => $this->producto_model->get_teclados() );
 
 			$this->load->view('front/header_view', $data);
 			$this->load->view('front/navbar_view');
+			if ($session_data) 
+			{
+				$this->load->view('partes/carritoparte_view' );
+			}
 			$this->load->view('productos/mostrarteclados_view', $dat);
 			$this->load->view('front/footer_view');
 
@@ -160,10 +176,14 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			$data['nombre'] = $session_data['nombre'];
 			$data['apellido'] = $session_data['apellido'];
 
-			$dat = array('productos' => $this->producto_model->get_notebooks() );
+			$dat = array('productos' => $this->producto_model->get_monitores() );
 
 			$this->load->view('front/header_view', $data);
 			$this->load->view('front/navbar_view');
+			if ($session_data) 
+			{
+				$this->load->view('partes/carritoparte_view' );
+			}
 			$this->load->view('productos/mostrarmonitores_view', $dat);
 			$this->load->view('front/footer_view');
 
@@ -542,6 +562,49 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			redirect('login', 'refresh');}
 		}
 
+		function listar_ventas()
+	    { 
+             if($this->_veri_log()){
+			$data = array('titulo' => 'Ventas');
+		
+			$session_data = $this->session->userdata('logged_in');
+			$data['perfil_id'] = $session_data['perfil_id'];
+			$data['nombre'] = $session_data['nombre'];
+			$data['apellido'] = $session_data['apellido'];
+
+
+			$dat = array('ventas_cabecera' => $this->producto_model->get_ventas_cabecera());
+
+			$this->load->view('front/header_view',$data);
+			$this->load->view('front/navbar_view',$data);
+			$this->load->view('ventas/muestraventas_view',$dat);
+			$this->load->view('front/footer_view');
+            }else{
+			redirect('login', 'refresh');
+            }
+         }
+        
+        
+        function muestra_detalle($id)
+		{
+             if($this->_veri_log()){
+			$data = array('titulo' => 'Detalle');
+		
+			$session_data = $this->session->userdata('logged_in');
+			$data['perfil_id'] = $session_data['perfil_id'];
+			$data['nombre'] = $session_data['nombre'];
+			$data['apellido'] = $session_data['apellido'];
+                 
+			$dat = array('ventas_detalle' => $this->producto_model->get_ventas_detalle($id));
+
+			$this->load->view('front/header_view', $data);
+			$this->load->view('front/navbar_view', $data);
+			$this->load->view('usuarios/muestradetalle', $dat);
+			$this->load->view('front/footer_view');
+            }else{
+			redirect('login', 'refresh');
+            }
+        }
 		
 	}
 /* End of file

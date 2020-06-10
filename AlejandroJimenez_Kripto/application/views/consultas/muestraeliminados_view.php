@@ -1,16 +1,9 @@
-<body>
-	<br><br>
-	<br><br>
-	<br><br>
-	<br><br>
-	<br><br>
+
 	<?php if( ($this->session->userdata('logged_in')) and ($perfil_id == '1') ) { ?>
 	<?php if (!$consultas) { ?>
-	<div class="container">
-		<div class="well">
-			<img class="rounded mx-auto d-block responsive" src="<?php echo base_url('assets/img/construccion.png');?>" width="250">
-			<h1 class="text-center"><b> No hay consultas archivadas.</b></h1>	
-		</div>
+		<div class="container page-content">
+			<h1 class="text-left display-4 mt-4">Sin consultas.</h1>	
+			<a class="btn btn-secondary" href="<?php echo base_url('ver_consultas'); ?>">Volver a Consultas</a>
 	</div>
 <?php } else { ?>
 
@@ -19,17 +12,17 @@
 			<h1>Consultas Archivadas</h1>
 		</div>	
 		<br><br>
-		<table class="table table-hover table-dark">
+		<table id="example" class="table table-striped table-bordered" style="width:100%">
 			<thead>
 				<tr>
-					<th>ID</th>
+				<th>ID</th>
 					<th>Nombre</th>
 					<th>Apellido</th>
 					<th>Telefono</th>
 					<th>email</th>
 					<th>Asunto</th>
 					<th>Mensaje</th>
-					<th>Restaurar</th>
+					<th>Archivar</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -43,7 +36,7 @@
 					<td><?php echo $row->asunto;  ?></td>
 					<td><?php echo $row->mensaje;  ?></td>
 					<td>
-						<a href="<?php echo base_url("restaurar_consulta/$row->id_mensaje");?>">Restaurar</a></td>
+					<a class="text-warning" href="<?php echo base_url("restaurar_consulta/$row->id_mensaje");?>"><i class="fa fa-window-restore"></i> Restaurar</a></td>
 				</tr>
 				<?php } ?>
 			</tbody>
@@ -52,10 +45,3 @@
 	<?php } ?>
 		
 <?php } ?>
-
-	<br><br>
-	<br><br>
-	<br><br>
-	<br><br>
-	<br><br>
-</body>

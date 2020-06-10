@@ -20,56 +20,60 @@
   <div class="overlay"></div>
 </section>
  <section class="album py-3 bg-white">
-  <h3 class="text-center mb-3">&Uacute;ltimos articulos</h3>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="<?php echo base_url('assets/img/silla.jpg') ?>" />
-                <div class="card-body">
-                  <h5 class="card-title">Silla gamer ACKRACING</h5>
-                  <p class="card-text">Color rojo, adaptada para grandes hora de uso y con respaldar adaptable hasta 130 grados.</p><br>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-success">Detalles</button>
-                    </div>
-                    <small class="text-muted">10 minutos</small>
-                  </div>
-                </div>
-              </div>
+    <div class="container align-items-center">
+    <div class="row">
+      <a title="" class="shadow bg-white rounded card col-3 mb-4 ml-3 text-decoration-none border-info" href="<?php echo base_url('ver_archivados'); ?>">
+            <div class="card-body">
+            <i class="fa fa-users fa-3x text-info float-left mr-2"></i>
+            <div class="card-horizontal-content mr-2">
+              <p class="h5 card-title text-info">Ver usuarios</p>
             </div>
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="<?php echo base_url('assets/img/auricular.jpg') ?>" />
-                <div class="card-body">
-                  <h5 class="card-title">Audifonos gamers con Micr&oacute;fono para PS4</h5>
-                  <p class="card-text">Con un sonido cristalino, es una opci&oacute;n para escuchar peliculas,videojuegos y m&uacute;sica.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-success">Detalles</button>
-                    </div>
-                    <small class="text-muted">12 horas</small>
-                  </div>
-                </div>
-              </div>
             </div>
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="<?php echo base_url('assets/img/mouse.jpg') ?>" />
-                <div class="card-body">
-                  <h5 class="card-title">Mouse gamer - UBS 3.0</h5>
-
-                  <p class="card-text">Fácil configuraci&oacute;n de botones laterales para mayor velocidad de acceso a atajos en comandos de juegos.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-success">Detalles</button>
-                    </div>
-                    <small class="text-muted">1 dia</small>
-                  </div>
-                </div>
-              </div>
+      </a>
+      <a title="Ver productos" class="shadow bg-white rounded card col-3 mb-4 ml-3 text-decoration-none border-success" href="<?php echo base_url('ver_archivados'); ?>">
+            <div class="card-body">
+            <i class="fa fa-braille fa-3x text-success float-left mr-2"></i>
+            <div class="card-horizontal-content mr-2">
+              <p class="h5 card-title text-success">Ver productos</p>
             </div>
-          </div>
+            </div>
+      </a>
+      <a title="Ver productos" class="shadow bg-white rounded card col-3 mb-4 ml-3 text-decoration-none border-success" href="<?php echo base_url('ver_archivados'); ?>">
+            <div class="card-body">
+            <i class="fa fa-braille fa-3x text-success float-left mr-2"></i>
+            <div class="card-horizontal-content mr-2">
+              <p class="h5 card-title text-success">Ver productos</p>
+            </div>
+            </div>
+      </a>
+    </div>
+    <div class="row">
+    <a title="Ver productos" class="shadow bg-white rounded card col-3 mb-4 ml-3 text-decoration-none border-success" href="<?php echo base_url('ver_archivados'); ?>">
+            <div class="card-body">
+            <i class="fa fa-braille fa-3x text-success float-left mr-2"></i>
+            <div class="card-horizontal-content mr-2">
+              <p class="h5 card-title text-success">Ver productos</p>
+            </div>
+            </div>
+      </a>
+      <a title="Ver productos" class="shadow bg-white rounded card col-3 mb-4 ml-3 text-decoration-none border-success" href="<?php echo base_url('ver_archivados'); ?>">
+            <div class="card-body">
+            <i class="fa fa-braille fa-3x text-success float-left mr-2"></i>
+            <div class="card-horizontal-content mr-2">
+              <p class="h5 card-title text-success">Ver productos</p>
+            </div>
+            </div>
+      </a>
+      <a title="Ver productos" class="shadow bg-white rounded card col-3 mb-4 ml-3 text-decoration-none border-success" href="<?php echo base_url('ver_archivados'); ?>">
+            <div class="card-body">
+            <i class="fa fa-braille fa-3x text-success float-left mr-2"></i>
+            <div class="card-horizontal-content mr-2">
+              <p class="h5 card-title text-success">Ver productos</p>
+            </div>
+            </div>
+      </a>
+    </div>
+    </div>
  </section>
  <section class="container bg-white">
   <hr class="my-4">

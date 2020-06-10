@@ -78,6 +78,8 @@ $route['verifico_consultas']='back/consultas_controller/alta_consultas';
 $route['archiva_consulta/(:num)']='back/consultas_controller/archivar_consulta/$1';
 $route['restaurar_consulta/(:num)']='back/consultas_controller/restaurar_consulta/$1';
 
+//Ventas
+$route['listar_ventas']='back/producto_controller/listar_ventas';
 
 
 //$route['confirmar_compra']='back/carrito_controller/get_id_usuario';

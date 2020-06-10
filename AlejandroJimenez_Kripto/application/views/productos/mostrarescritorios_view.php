@@ -23,7 +23,7 @@
 						<a class="text-decoration-none text-white" href="<?php echo base_url('productos/monitor');?>">Monitor</a>
 					</li>
 					<li class="list-group-item bg-info">
-						<a class="text-decoration-none text-white" href="<?php echo base_url('productos/notebooks');?>">Notebook</a>
+						<a class="text-decoration-none text-white" href="<?php echo base_url('productos/notebook');?>">Notebook</a>
 					</li>
 					<li class="list-group-item bg-secondary">
 						<a class="text-decoration-none text-white" href="javascript:void(0);">Escritorio</a>
@@ -53,7 +53,7 @@
 			Categor&iacute;as
 		</div>
 		<ul class="list-group list-group-flush">
-			<li class="list-group-item bg-secondary ">
+			<li class="list-group-item  bg-info">
 				<a href="<?php echo base_url('productos/auriculares');?>" class="text-decoration-none text-white">Auriculares</a>
 			</li>
 			<li class="list-group-item bg-info">
@@ -68,7 +68,7 @@
 			<li class="list-group-item bg-info">
 				<a class="text-decoration-none text-white" href="<?php echo base_url('productos/notebook');?>" class="">Notebook</a>
 			</li>
-			<li class="list-group-item bg-info">
+			<li class="list-group-item bg-secondary">
 				<a class="text-decoration-none text-white" href="javascript:void(0);" class="">Escritorio</a>
 			</li>
 		</ul>

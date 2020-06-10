@@ -118,7 +118,7 @@ class Carrito_controller extends CI_Controller {
 		
 		$this->load->view('front/header_view', $data);
 		$this->load->view('front/navbar_view', $data);
-		$this->load->view('front/compra_view', $data);
+		$this->load->view('carrito/compra_view', $data);
 		$this->load->view('front/footer_view');
     }
     

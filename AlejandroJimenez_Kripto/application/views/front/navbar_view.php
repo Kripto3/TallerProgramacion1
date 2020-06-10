@@ -39,6 +39,7 @@
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="<?php echo base_url('ver_usuarios');?>">Listado</a>
                 <a class="dropdown-item" href="<?php echo base_url('ver_consultas');?>">ver consultas</a>
+                <a class="dropdown-item" href="<?php echo base_url('listar_ventas');?>">Listar ventas</a>
               </div>
           </li>
           <li class="nav-item dropdown">
@@ -53,6 +54,7 @@
             <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mi Perfil</a>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="javascript:void(0)"><?= $nombre ?> <?= $apellido ?></a>
+              <a class="dropdown-item" href="<?php echo base_url('panel');?>">Panel Principal</a>
               <div role="separator" class="dropdown-divider"></div>
               <a class="dropdown-item" href="<?php echo base_url('logout');?>">Salir</a>
             </div>

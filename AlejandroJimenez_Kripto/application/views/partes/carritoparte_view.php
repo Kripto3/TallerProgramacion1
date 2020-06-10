@@ -51,7 +51,7 @@
                         </td> 
                         <?php $gran_total = $gran_total + $item['subtotal']; ?>
                         <td>$ <?php echo number_format($item['subtotal'], 2) ?></td>
-                        <td> <?php $path = '<i class="fa fa-trash text-primary"> Quitar producto</i>'; echo anchor('borra_carrito/'.$item['rowid'], $path); 
+                        <td> <?php $path = '<i class="fa fa-trash text-danger"> Quitar producto</i>'; echo anchor('borra_carrito/'.$item['rowid'], $path); 
                             ?>
                         </td>
                     </tr>
@@ -69,11 +69,11 @@
                     </td> 
                     <td colspan="5" align="right">
                         <!-- Borrar carrito usa mensaje de confirmacion javascript implementado en partes/head_view -->
-                        <a href="<?php echo base_url('borra_carrito/all');?>" class ='btn btn-primary btn-lg' >Vaciar carrito</a>
+                        <a href="<?php echo base_url('borra_carrito/all');?>" class ='btn btn-danger btn-sm' >Vaciar carrito</a>
                         <!-- Submit boton. Actualiza los datos en el carrito -->    
-                        <input type="submit" class ='btn btn-primary btn-lg' value="Actualizar">
+                        <input type="submit" class ='btn btn-info btn-sm' value="Actualizar">
                         <!-- " Confirmar orden envia a carrito_controller/muestra_compra  -->
-                        <input type="button" class ='btn btn-primary btn-lg' value="Confirmar Orden" onclick="window.location = 'comprar'">
+                        <input type="button" class ='btn btn-success btn-sm' value="Confirmar Orden" onclick="window.location = '<?php echo base_url('comprar');?>'">
                     </td>
                 </tr>
                 <?php echo form_close();

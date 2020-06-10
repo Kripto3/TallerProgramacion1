@@ -19,14 +19,14 @@
 					<li class="list-group-item bg-info">
 						<a class="text-decoration-none text-white" href="<?php echo base_url('productos/teclado');?>">Teclado</a>
 					</li>
-					<li class="list-group-item bg-info">
-						<a class="text-decoration-none text-white" href="<?php echo base_url('productos/monitor');?>">Monitor</a>
+					<li class="list-group-item bg-secondary">
+						<a class="text-decoration-none text-white " href="javascript:void(0);">Monitor</a>
 					</li>
 					<li class="list-group-item bg-info">
-						<a class="text-decoration-none text-white" href="<?php echo base_url('productos/notebooks');?>">Notebook</a>
+						<a class="text-decoration-none text-white" href="<?php echo base_url('productos/notebook');?>">Notebook</a>
 					</li>
-					<li class="list-group-item ">
-						<a class="text-decoration-none text-white" href="javascript:void(0);">Escritorio</a>
+					<li class="list-group-item bg-info">
+						<a class="text-decoration-none text-white" href="<?php echo base_url('productos/escritorio');?>" >Escritorio</a>
 					</li>
 				</ul>
 			</div>

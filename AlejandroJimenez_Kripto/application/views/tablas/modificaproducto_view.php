@@ -1,12 +1,15 @@
 
-<div class="container">
+<div class="container page-content">
+<h3 class="display-4 mt-4">Modificar producto</h3>
 <div class="col-sm-10 col-md-10">
-	<div class="well">
-		<h1>Modificar Datos</h1>	
-		<h6> <b>Acepta imagenes gif, jpg, jpeg, png</b></h6>
-		<h6> <b>Tamaño maximo de la imagen 2MB</b></h6>		
-	</div>	            
-
+<hr>
+	<div class="row">
+		<div class="col-8">
+			<div class="alert alert-info text-center">
+				<p>Acepta imagenes gif, jpg, jpeg, png. Tamaño maximo de la imagen <strong>2MB</strong><p>
+			</div>
+		</div>
+	</div>
 	<?php echo form_open_multipart("verifico_modificaproducto/$id", ['class' => 'form-signin', 'role' => 'form']); ?>
 		<div class="row">
 	   		<div class="col-md-6">
@@ -14,8 +17,7 @@
 					<?php echo form_label('Descripcion:', 'descripcion'); ?>
 					<?php echo form_input(['name' => 'descripcion', 
 													'id' => 'descripcion', 
-													'class' => 'form-control',
-													'placeholder' => 'Descripcion', 
+													'class' => 'form-control rounded-pill border-0 shadow-sm',
 													'autofocus'=>'autofocus',
 													'value'=>"$descripcion"]); ?>
 					<?php echo form_error('descripcion'); ?>
@@ -34,7 +36,7 @@
 						$propiedades = [
 								'name' => 'categoria_id', 
 								'id' => 'categoria_id', 
-								'class' =>'form-control col-lg-6',
+								'class' =>'form-control col-lg-6 rounded-pill border-0 shadow-sm',
 								'value'=> "$categoria_id"
 						];
 					
@@ -51,8 +53,7 @@
 					<?php echo form_label('Precio Costo:', 'precio_costo'); ?>
 					<?php echo form_input(['name' => 'precio_costo', 
 													'id' => 'precio_costo', 
-													'class' => 'form-control',
-													'placeholder' => 'Precio Costo', 
+													'class' => 'form-control rounded-pill border-0 shadow-sm',
 													'value'=>"$precio_costo"]); ?>
 					<?php echo form_error('precio_costo'); ?>
 				</div>
@@ -62,8 +63,7 @@
 					<?php echo form_label('Precio Venta:', 'precio_venta'); ?>
 					<?php echo form_input(['name' => 'precio_venta', 
 													'id' => 'precio_venta', 
-													'class' => 'form-control',
-													'placeholder' => 'Precio Venta',
+													'class' => 'form-control rounded-pill border-0 shadow-sm',
 													'value'=>"$precio_venta"]); ?>
 					<?php echo form_error('precio_venta'); ?>
 				</div>
@@ -75,8 +75,7 @@
 					<?php echo form_label('Stock:', 'stock'); ?>
 					<?php echo form_input(['name' => 'stock', 
 													'id' => 'stock', 
-													'class' => 'form-control',
-													'placeholder' => 'Stock',
+													'class' => 'form-control rounded-pill border-0 shadow-sm',
 													'value'=>"$stock"]); ?>
 					<?php echo form_error('stock'); ?>
 				</div>
@@ -86,8 +85,7 @@
 					<?php echo form_label('Stock minimo:', 'stock_min'); ?>
 					<?php echo form_input(['name' => 'stock_min', 
 													'id' => 'stock_min', 
-													'class' => 'form-control',
-													'placeholder' => 'Stock Minimo',
+													'class' => 'form-control rounded-pill border-0 shadow-sm',
 													'value'=>"$stock_min"]); ?>
 					<?php echo form_error('stock_min'); ?>
 				</div>
@@ -99,34 +97,32 @@
 					<?php echo form_label('Imagen actual:', 'img_ac'); ?>
 					<img  id="imagen_view" name="imagen_view" class="img-thumbnail" src="<?php  echo base_url($imagen); ?>" >
 				</div>	
-			</div>
-			<div class="col-md-6">
 				<div class="form-group">
 					<?php echo form_label('Imagen:', 'imagen'); ?>
 					<?php echo form_input(['type' => 'file',
-													'name' => 'filename', 
-													'id' => 'filename', 
-													'class' => 'form-control']); ?> 
+												'name' => 'filename', 
+												'id' => 'filename', 
+												'class' => 'form-control rounded-pill border-0 shadow-sm']); ?> 
 					<?php echo form_error('filename'); ?>
-					<br>
-					<?php echo form_submit('modificar', 'Modificar',"class='btn btn-lg btn-warning btn-block'"); ?>
-				</div>		
+				</div>
 			</div>
-		</div>
-		<div class="row">
 			<div class="col-md-6">
-				<?php echo form_label('Infomacion:', 'info'); ?>
-				<?php echo form_textarea(['name' => 'info', 
-													'id' => 'info', 
-													'class' => 'form-control',
-													'placeholder' => 'Informacion',
-													'value'=>"$info"]); ?>
-													<?php echo form_error('info'); ?>
+				<div class="form-group">
+					<?php echo form_label('Infomacion:', 'info'); ?>
+					<?php echo form_textarea(['name' => 'info', 
+														'id' => 'info', 
+														'class' => 'form-control',
+														'placeholder' => 'Informacion',
+														'value'=>"$info"]); ?>
+														<?php echo form_error('info'); ?>
+				</div>
+				<br>
+			<?php echo form_submit('modificar', 'Modificar',"class='btn btn-lg col-4 btn-success btn-block d-inline-block'"); ?>
+			<a href="<?php echo base_url('productos'); ?>" class="btn btn-lg col-4 btn-secondary">Cancelar</a>
 			</div>
 		</div>
 	<?php echo form_close(); ?>
 	<div>
-		
 	</div>
 </div>
 </div>

@@ -1,11 +1,7 @@
 
 <section class="container  page-content">
-	<h1 class="text-center mt-4 text-uppercase font-weight-bold font-italic">Agregar Usuario</h1>
-	<br><br>
-		<p class="mb-4 ml-3 mr-2 text-center">
-			Usted podra generar usuarios con el rol de Cliente o Administrador:
-		</p>
-
+	<h1 class="text-left mt-4 display-4">Agregar Usuario</h1>
+	<hr>
 	<div class="container">
 		<?php echo validation_errors(); ?>
 		<!-- Genero el formulario para crear una usuario -->
@@ -16,8 +12,7 @@
 				<label for="nombre">Nombre</label>
 					<?php echo form_input(['name' => 'nombre', 
 											'id' => 'nombre', 
-											'class' => 'form-control',
-											'placeholder' => 'Nombre', 
+											'class' => 'form-control rounded-pill border-0 shadow-sm',
 											'required'=>'required', 
 											'autofocus'=>'autofocus',
 											'value'=>set_value('nombre')]); ?>
@@ -26,8 +21,7 @@
 				<label for="apellido">Apellido</label>
 					<?php echo form_input(['name' => 'apellido', 
 											'id' => 'apellido', 
-											'class' => 'form-control',
-											'placeholder' => 'Apellido', 
+											'class' => 'form-control rounded-pill border-0 shadow-sm',
 											'required'=>'required',
 											'value'=>set_value('apellido')]); ?>
 			</div>
@@ -38,8 +32,7 @@
 								<?php echo form_input(['type'=>'email', 
 														'name' => 'email', 
 														'id' => 'email', 
-														'class' => 'form-control',
-														'placeholder' => 'Correo electronico', 
+														'class' => 'form-control rounded-pill border-0 shadow-sm',
 														'required'=>'required',
 														'value'=>set_value('email')]); ?>
 			</div>
@@ -49,8 +42,7 @@
 				<label for="usuario">Nombre de usuario</label>
 								<?php echo form_input(['name' => 'username', 
 														'id' => 'username', 
-														'class' => 'form-control',
-														'placeholder' => 'username', 
+														'class' => 'form-control rounded-pill border-0 shadow-sm',
 														'required'=>'required',
 														'value'=>set_value('username')]); ?>
 			</div>
@@ -58,7 +50,7 @@
 				<label for="perfil">Perfil</label>
 								<?php echo form_input(['name' => 'perfil_id', 
 														'id' => 'perfil_id', 
-														'class' => 'form-control',
+														'class' => 'form-control rounded-pill border-0 shadow-sm',
 														'placeholder' => '1- Admin | 2-Cliente ', 
 														'required'=>'required',
 														'value'=>set_value('perfil_id')]); ?>
@@ -69,22 +61,19 @@
 				<label for="pass">Contraseña</label>
 								<?php echo form_password(['name' => 'password', 
 														'id' => 'password', 
-														'class' => 'form-control',
-														'placeholder' => 'Contraseña', 
+														'class' => 'form-control rounded-pill border-0 shadow-sm',
 														'required'=>'required']); ?>
 			</div>
 			<div class="col-md-6">		
 				<label for="re_password">Reingrese su contraseña</label>
 								<?php echo form_password(['name' => 're_password', 
 														'id' => 're_password', 
-														'class' => 'form-control',
-														'placeholder' => 'Repetir Contraseña', 
+														'class' => 'form-control rounded-pill border-0 shadow-sm',
 														'required'=>'required']); ?>
 			</div>
 		</div>
 		<br>
-		<?php echo form_submit('submit', 'Registrar',"class='btn btn-dark' "); ?>
-		<?php echo form_reset ('reset', 'Limpiar', "class='btn btn-danger ml-1'"); ?>
+		<?php echo form_submit('submit', 'Registrar',"class='btn btn-lg btn-success btn-block col-3' "); ?>
 			
 		<?php echo form_close(); ?>
 	</div>

@@ -1,10 +1,3 @@
-<body>
-	<br><br>
-	<br><br>
-	<br><br>
-	<br><br>
-	<br><br>
-
 
 <?php if (!$usuarios) { ?>
 
@@ -56,9 +49,3 @@
 	</div>
 
 	<?php } ?>
-	<br><br>
-	<br><br>
-	<br><br>
-	<br><br>
-	<br><br>
-</body>

@@ -146,13 +146,19 @@ class Producto_model extends CI_Model{
         }        
     }
     function get_ventas_cabecera()
-    {
-        $this->db->join('usuarios','usuarios.id = ventas_cabecera.usuario_id') ;   
+    {  
+        $this->db->select('*');
+        $this->db->from('ventas_cabecera');
+        $this->db->join('usuarios','usuarios.id_usuario = ventas_cabecera.usuario_id');
+        $this->db->join('ventas_detalles','ventas_detalles.venta_id = ventas_cabecera.id');
+        $this->db->join('productos','productos.id = ventas_detalles.producto_id');
+        $this->db->join('categorias','categorias.id = productos.categoria_id');
+        $this->db->order_by('fecha', 'desc');
+        $queryList = $this->db->get();
+        // print_r($queryList->result());
         //select * from ventas_cabecera;
-        $query = $this->db->get('ventas_cabecera', 'usuarios.nombre','usuarios.apellido');
-       
-        if($query->num_rows()>0) {
-            return $query;
+        if($queryList->num_rows()>0) {
+            return $queryList;
         } else {
             return FALSE;
         }
@@ -160,12 +166,12 @@ class Producto_model extends CI_Model{
     
         function get_ventas_detalle($id)
     {
-        $this->db->join('productos','productos.id = ventas_detalle.producto_id');   
+        $queryList = $this->db->join('productos','productos.id = ventas_detalle.producto_id');   
 
         //select * from ventas_detalle;
         $query = $this->db->get_where('ventas_detalle', array('venta_id' => $id));
        
-          
+        
         if($query->num_rows()>0) {
             return $query;
         } else {

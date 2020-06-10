@@ -1,5 +1,4 @@
 
-	<br><br>
 <?php if (!$usuarios) { ?>
 	<div class="container page-content">
 		<div class="well">
@@ -10,17 +9,31 @@
 
 	<?php } else { ?>
 	<div class="container page-content">
-		<div class="well">
-			<h1>Todos los Usuarios</h1>
-		</div>	
-		<?php if( ($this->session->userdata('logged_in')) and ($perfil_id == '1') ) { ?>
-			<a type="button" class="btn btn-success" href="<?php echo base_url('agrega_usuarios'); ?>">Agregar</a>
-			<a type="button" class="btn btn-danger" href="<?php echo base_url('usuarios_eliminados'); ?>">Ver Elminados</a>
-		<?php }else	{ ?>
-			<a type="button" class="btn btn-danger" href="<?php echo base_url('usuarios_eliminados'); ?>">Ver Eliminados</a>
-		<?php } ?>
-
-		<br><br>
+			<h1 class="display-4  mt-4">Todos los Usuarios</h1>
+			<hr>
+			<div class="row">
+				<?php if( ($this->session->userdata('logged_in')) and ($perfil_id == '1') ) { ?>
+					<a title="Agregar usuarios" class="card col-4 mb-4 mr-3 text-decoration-none border-success" href="<?php echo base_url('agrega_usuarios'); ?>">
+						<div class="card-body">
+						<i class="fa fa-address-book-o fa-3x text-success float-left mr-2"></i>
+						<div class="card-horizontal-content mr-2">
+							<p class="h5 card-title text-success">Agregar Usuarios</p>
+						</div>
+						</div>
+					</a>
+					<a title="Ver usuarios usuarios" class="card col-4 mb-4 text-decoration-none border-danger" href="<?php echo base_url('usuarios_eliminados'); ?>">
+						<div class="card-body">
+							<i class="fa fa-user-times fa-3x text-danger float-left mr-2"></i>
+							<div class="card-horizontal-content">
+								<p class="h5 card-title text-danger">Usuarios Eliminados</p>
+							</div>
+						</div>
+					</a>
+				<?php }else	{ ?>
+					<a type="button" class="btn btn-danger" href="<?php echo base_url('usuarios_eliminados'); ?>">Ver Eliminados</a>
+				<?php } ?>
+			</div>
+		<br>
 		<table id="example" class="table table-striped table-bordered" style="width:100%">
 			<thead>
 				<tr>
