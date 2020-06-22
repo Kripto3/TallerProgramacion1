@@ -41,6 +41,7 @@ $route['productos/teclado']= 'back/producto_controller/mostrar_teclados';
 $route['productos/monitor']= 'back/producto_controller/mostrar_monitores';
 $route['productos/notebook']= 'back/producto_controller/mostrar_notebooks';
 $route['productos/escritorio']= 'back/producto_controller/mostrar_escritorios';
+$route['detalle_venta/(:num)']='back/producto_controller/detalles_venta/$1';
 
 
 //ruta para verificar datos del producto(BAJA)
@@ -54,7 +55,6 @@ $route['carrito_agrega']='back/carrito_controller/add';
 $route['carrito_actualiza']='back/carrito_controller/actualiza_carrito';
 $route['borra_carrito/(:any)']='back/carrito_controller/remove/$1';
 $route['comprar']='back/carrito_controller/muestra_compra';
-
 $route['confirmar_compra']='back/carrito_controller/guarda_compra';
 
 //ruta para usuarios
@@ -80,6 +80,7 @@ $route['restaurar_consulta/(:num)']='back/consultas_controller/restaurar_consult
 
 //Ventas
 $route['listar_ventas']='back/producto_controller/listar_ventas';
+$route['listar_compras/(:any)']='back/producto_controller/muestra_compra/$1';
 
 
 //$route['confirmar_compra']='back/carrito_controller/get_id_usuario';

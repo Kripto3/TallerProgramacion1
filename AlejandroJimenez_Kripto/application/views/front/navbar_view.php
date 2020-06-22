@@ -9,28 +9,30 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <!--MENU CLIENTES-->
         <?php if( ($this->session->userdata('logged_in')) and ($perfil_id == '2') ) { ?> 
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav">
           <li class="nav-item active">
             <a class="nav-link text-white" href="<?php echo base_url('principal');?>">Principal<span class="sr-only">(current)</span></a>
           </li>
            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Productos</a>
+              <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Productos</a>
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="<?php echo base_url('catalogo');?>">Cat&aacute;logo</a>
               </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mi Perfil</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="javascript:void(0)"><?= $nombre ?> <?= $apellido ?></a>
-              <div role="separator" class="dropdown-divider"></div>
-              <a class="dropdown-item" href="<?php echo base_url('logout');?>">Salir</a>
-            </div>
+              <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Autogesti&oacute;n</a>
+              <div class="dropdown-menu">
+                <a class="nav-link" href="<?php echo base_url('panel');?>">Administraci&oacute;n</a>
+                <a class="nav-link" href="<?php echo base_url("listar_compras/$id_usuario");?>">Compras</a>
+              </div>
           </li>
         </ul>
+        <div class="ml-auto text-white">
+            <i class="fa fa-user-circle-o" aria-hidden="true"></i> <span><?= $nombre ?> <?= $apellido ?></span> | <a href="<?php echo base_url('logout');?>" class="btn btn-outline-dark btn-sm">Salir</a>
+        </div>
           <!--MENU ADMINISTRADORES-->
         <?php } else if( ($this->session->userdata('logged_in')) and ($perfil_id == '1') ) { ?> 
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav">
           <li class="nav-item active">
             <a class="nav-link text-white" href="<?php echo base_url('principal');?>">Principal<span class="sr-only">(current)</span></a>
           </li>
@@ -51,15 +53,15 @@
               </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mi Perfil</a>
+            <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Autogesti&oacute;n</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="javascript:void(0)"><?= $nombre ?> <?= $apellido ?></a>
-              <a class="dropdown-item" href="<?php echo base_url('panel');?>">Panel Principal</a>
-              <div role="separator" class="dropdown-divider"></div>
-              <a class="dropdown-item" href="<?php echo base_url('logout');?>">Salir</a>
+              <a class="dropdown-item" href="<?php echo base_url('panel');?>">Administraci&oacute;n</a>
             </div>
           </li>
         </ul>
+        <div class="ml-auto text-white">
+          <i class="fa fa-user-circle-o" aria-hidden="true"></i> <span><?= $nombre ?> <?= $apellido ?></span> | <a href="<?php echo base_url('logout');?>" class="btn btn-outline-dark btn-sm">Salir</a>
+          </div>
          <!--MENU PUBLICO-->
          <?php } else { ?> 
          <ul class="navbar-nav ">

@@ -28,7 +28,6 @@ class Login_controller extends CI_Controller{
 		}
 		else
 		{	
-			//Vuelve a la pagina que estaba antes de loguearse
 			redirect('panel');
 		}
 	}

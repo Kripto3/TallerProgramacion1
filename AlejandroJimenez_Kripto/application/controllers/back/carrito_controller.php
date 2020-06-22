@@ -18,7 +18,6 @@ class Carrito_controller extends CI_Controller {
 	{
 	}
 
-	//Este método llama a la página Electrodomésticos, con el carrito si está logueado
 	public function productos()
 	{
 		$dat = array('productos' => $this->producto_model->get_productos());
@@ -28,11 +27,11 @@ class Carrito_controller extends CI_Controller {
 		$data['perfil_id'] = $session_data['perfil_id'];
 		$data['nombre'] = $session_data['nombre'];
 		$data['apellido'] = $session_data['apellido'];
-		
+		$data['id_usuario'] = $session_data['id_usuario'];
 		$this->load->view('front/header_view', $data);
 		$this->load->view('front/navbar_view');
 		if ($session_data) 
-		{
+		{	
 			$this->load->view('partes/carritoparte_view' );
 		}
 		$this->load->view('productos/catalogo_view', $dat);
@@ -44,14 +43,16 @@ class Carrito_controller extends CI_Controller {
 	//Agrega elemento al carrito
 	function add()
 	{
+		$id_producto =  $this->input->post('id');
         // Genera array para insertar en el carrito
 		$insert_data = array(
-			'id' => $this->input->post('id'),
+			'id' => $id_producto,
 			'name' => $this->input->post('descripcion'),
 			'price' => $this->input->post('precio_venta'),
-			'qty' => 1
+			'qty' => 1,
+			'stock' => $this->producto_model->get_stock($id_producto)
 			);	
-
+			
         // Inserta elemento al carrito
 		$this->cart->insert($insert_data);
 	      
@@ -91,7 +92,8 @@ class Carrito_controller extends CI_Controller {
 		    $rowid = $cart['rowid'];
 	    	$price = $cart['price'];
 	    	$amount = $price * $cart['qty'];
-	    	$qty = $cart['qty'];
+			$qty = $cart['qty'];
+		
 	    
 	    	$data = array(
 					'rowid'   => $rowid,
@@ -115,7 +117,7 @@ class Carrito_controller extends CI_Controller {
 		$data['nombre'] = $session_data['nombre'];
 		$data['apellido'] = $session_data['apellido'];
 		$data['email'] = $session_data['email'];
-		
+		$data['id_usuario'] = $session_data['id_usuario'];
 		$this->load->view('front/header_view', $data);
 		$this->load->view('front/navbar_view', $data);
 		$this->load->view('carrito/compra_view', $data);
@@ -128,9 +130,6 @@ class Carrito_controller extends CI_Controller {
 	{
 		$session_data = $this->session->userdata('logged_in');
 		$data_email = $session_data['email'];
-
-		//Obtener el usuario por su email
-		//$dataa = $this->usuario_model->get_id_usuario($data_email);
 		
 		$data = $session_data['id_usuario'];
 		//$data['id'] = $this->usuario_model['usuario_id'];
@@ -182,7 +181,7 @@ class Carrito_controller extends CI_Controller {
 		$data['perfil_id'] = $session_data['perfil_id'];
 		$data['nombre'] = $session_data['nombre'];
 		$data['apellido'] = $session_data['apellido'];
-		
+		$data['id_usuario'] = $session_data['id_usuario'];
         $this->load->view('front/header_view', $data);
 		$this->load->view('front/navbar_view', $data);
 		$this->load->view('front/compralista_view');

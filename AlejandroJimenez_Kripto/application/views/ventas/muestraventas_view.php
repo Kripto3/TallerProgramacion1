@@ -2,52 +2,43 @@
 
 	<?php if (!$ventas_cabecera) { ?>
 	<div class="container page-content">
-		<div class="well">
-			<img class="rounded mx-auto d-block responsive" src="<?php echo base_url('assets/img/construccion.png');?>" width="250">
-			<h1 class="text-center"><b> Todavia no se han realizado ventas.</b></h1>	
-		</div>
-
-			<a type="button" class="btn btn-success" href="<?php echo base_url('agrega_producto'); ?>">Agregar</a>
-			<a type="button" class="btn btn-danger" href="<?php echo base_url('productos_eliminados'); ?>">ELIMINADOS</a>
-			
+			<h1 class="display-4 text-left"><b> Todavia no se han realizado ventas.</b></h1>		
 	</div>
 
 <?php } else { ?>
 	<div class="container page-content">
-		<div class="well">
-			<h1>Todas las ventas</h1>
-		</div>
-		<br><br>
-		<table class="table table-hover table-dark">
+		<h1 class="display-4 text-left mt-4">Listado de Ventas</h1>
+		<hr>
+		
+		<table id="example" class="table table-striped table-bordered" style="width:100%">
 			<thead>
 				<tr>
-					<th>ID Operacion</th>
-					<th>Fecha</th>
+					<th>Factura Nro</th>
+					<th>Fecha Compra</th>
 					<th>ID Usuario</th>
-					<th>Descripcion</th>
-					<th>Categoria</th>
-					<th>Cantidad</th>
-					<th>Precio Venta por unidad</th>
-					<th>Total de Venta</th>
-				</tr>
+					<th>Total</th>
+					<th>Factura</th>
+				</tr> 	
 			</thead>
 			<tbody>
-				<?php foreach($ventas_cabecera->result() as $row)
-				{ 
-					//$imagen = $row->imagen;
-					?>
+				<?php $venta_anterior = 0; ?>
 
+				<?php foreach($ventas_cabecera->result() as $row){ ?>
+
+					<?php if ($venta_anterior != $row->id_venta){ ?>
 					<tr>
-					<td><?php echo $row->id;  ?></td>
-					<td><?php echo $row->fecha;  ?></td>
-					<td><?php echo $row->usuario_id;  ?></td>
-					<td><?php echo $row->descripcion;  ?></td>
-					<td><?php echo $row->categoria_id;  ?></td>
-					<td><?php echo $row->cantidad;  ?></td>
-					<td><?php echo $row->precio_venta;  ?></td>
-					<td><?php echo $row->total_venta;  ?></td>
+						<td><?php echo $row->id_venta; ?> </td>
+						<td><?php echo $row->fecha;  ?></td>
+						<td><?php echo $row->usuario_id;  ?></td>
+						<td class="text-right"><?php echo $row->total_venta;  ?></td>
+						<td>
+							<a href="<?php echo base_url("detalle_venta/$row->id_venta");?>" class="text-info"><i class="fa fa-file-text-o" ></i> ver Factura</a>
+						</td>
+					</tr>
+					<?php } ?>
 					
-				</tr>
+					<?php $venta_anterior = $row->id_venta; ?>
+				
 				<?php } ?>
 			</tbody>
 		</table>	            

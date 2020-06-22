@@ -3,7 +3,7 @@
 	<?php if (!$consultas) { ?>
 	<div class="container page-content">
 			<h1 class="text-left display-4 mt-4">Sin consultas.</h1>	
-			<a class="btn btn-danger" href="<?php echo base_url('ver_archivados'); ?>">Ver Arhivados</a>
+			<a class="btn btn-danger" href="<?php echo base_url('ver_archivados'); ?>">Ver Archivados</a>
 	</div>
 <?php } else { ?>
 

@@ -25,6 +25,7 @@
 													'id' => 'descripcion', 
 													'class' => 'form-control rounded-pill border-0 shadow-sm',
 													'autofocus'=>'autofocus',
+													'required' => 'true',
 													'value'=>set_value('descripcion')]); ?>
 						</div>
 					</div>
@@ -33,13 +34,14 @@
 						<?php
 							$lista['0'] = 'Seleccione categoria';
 							foreach ($categoria as $row){
-								$lista[$row->id] = $row->descripcion;
+								$lista[$row->id] = $row->descripcion_categoria;
 							}
 										
 							$propiedades = [
 									'name' => 'categoria_id', 
 									'id' => 'categoria_id', 
 									'class' =>'form-control col-md-6 rounded-pill border-0 shadow-sm',
+									'required' => 'true',
 									'value'=>set_value('categoria_id')
 							];
 							$med = ['med'];
@@ -52,7 +54,7 @@
 							<?php echo form_input(['name' => 'precio_costo', 
 													'id' => 'precio_costo', 
 													'class' => 'form-control rounded-pill border-0 shadow-sm',
-												
+													'required' => 'true',
 													'value'=>set_value('precio_costo')]); ?>
 						</div>
 					</div>
@@ -62,7 +64,7 @@
 							<?php echo form_input(['name' => 'precio_venta', 
 													'id' => 'precio_venta', 
 													'class' => 'form-control rounded-pill border-0 shadow-sm',
-												
+													'required' => 'true',
 													'value'=>set_value('precio_venta')]); ?>
 						</div>
 					</div>
@@ -72,7 +74,7 @@
 							<?php echo form_input(['name' => 'stock', 
 													'id' => 'stock', 
 													'class' => 'form-control rounded-pill border-0 shadow-sm',
-													
+													'required' => 'true',
 													'value'=>set_value('stock')]); ?>
 						</div>
 					</div>
@@ -82,7 +84,7 @@
 							<?php echo form_input(['name' => 'stock_min', 
 													'id' => 'stock_min', 
 													'class' => 'form-control rounded-pill border-0 shadow-sm',
-													
+													'required' => 'true',
 													'value'=>set_value('stock_min')]); ?>
 						</div>
 					</div>
@@ -92,7 +94,7 @@
 							<?php echo form_textarea(['name' => 'info', 
 													'id' => 'info', 
 													'class' => 'form-control',	
-													
+													'required' => 'true',
 													'value'=>set_value('info')]); ?>
 						</div>
 					</div>
@@ -102,14 +104,16 @@
 							<?php echo form_input(['type' => 'file',
 													'name' => 'filename', 
 													'id' => 'filename', 
+													'required' => 'true',
 													'class' => 'form-control rounded-pill border-0 shadow-sm']); ?> 
 
 						</div>
 					</div>
 					<div class="container">	
 						<div class="row">
-							<div class="col-lg-3 col-lg-offset-5">
-									<?php echo form_submit('submit', 'Cargar',"class='btn btn-lg btn-primary btn-block'"); ?> 
+							<div class="col-12">
+									<?php echo form_submit('submit', 'Cargar',"class='btn col-2 btn-lg btn-success btn-block d-inline-block'"); ?> 
+									<a href="<?php echo base_url('productos'); ?>" class="btn btn-lg col-2 btn-secondary">Volver</a>	  
 									<?php echo form_close(); ?>
 							</div>
 						</div>

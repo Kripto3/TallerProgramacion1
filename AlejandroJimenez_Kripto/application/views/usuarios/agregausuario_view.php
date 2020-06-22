@@ -73,8 +73,8 @@
 			</div>
 		</div>
 		<br>
-		<?php echo form_submit('submit', 'Registrar',"class='btn btn-lg btn-success btn-block col-3' "); ?>
-			
+		<?php echo form_submit('submit', 'Registrar',"class='btn btn-lg btn-success btn-block col-3 d-inline-block' "); ?>
+		<a href="<?php echo base_url('ver_usuarios'); ?>" class="btn btn-lg col-3 btn-secondary">Cancelar</a>	
 		<?php echo form_close(); ?>
 	</div>
 	</section>

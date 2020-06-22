@@ -31,7 +31,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			$data['perfil_id'] = $session_data['perfil_id'];
 			$data['nombre'] = $session_data['nombre'];
 			$data['apellido'] = $session_data['apellido'];
-
+			$data['id_usuario'] = $session_data['id_usuario'];
 			$dat = array('productos' => $this->producto_model->get_productos() );
 
 			$this->load->view('front/header_view',$data);
@@ -54,7 +54,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			$data['perfil_id'] = $session_data['perfil_id'];
 			$data['nombre'] = $session_data['nombre'];
 			$data['apellido'] = $session_data['apellido'];
-			
+			$data['id_usuario'] = $session_data['id_usuario'];
 			$this->load->view('front/header_view', $data);
 			$this->load->view('front/navbar_view');
 			if ($session_data) 
@@ -77,7 +77,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			$data['perfil_id'] = $session_data['perfil_id'];
 			$data['nombre'] = $session_data['nombre'];
 			$data['apellido'] = $session_data['apellido'];
-
+			$data['id_usuario'] = $session_data['id_usuario'];
 			$dat = array('productos' => $this->producto_model->get_notebooks() );
 
 			$this->load->view('front/header_view', $data);
@@ -101,7 +101,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			$data['perfil_id'] = $session_data['perfil_id'];
 			$data['nombre'] = $session_data['nombre'];
 			$data['apellido'] = $session_data['apellido'];
-
+			$data['id_usuario'] = $session_data['id_usuario'];
 			$dat = array('productos' => $this->producto_model->get_escritorios() );
 
 			$this->load->view('front/header_view', $data);
@@ -125,7 +125,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			$data['perfil_id'] = $session_data['perfil_id'];
 			$data['nombre'] = $session_data['nombre'];
 			$data['apellido'] = $session_data['apellido'];
-
+			$data['id_usuario'] = $session_data['id_usuario'];
 			$dat = array('productos' => $this->producto_model->get_Mouse() );
 
 			$this->load->view('front/header_view', $data);
@@ -150,7 +150,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			$data['perfil_id'] = $session_data['perfil_id'];
 			$data['nombre'] = $session_data['nombre'];
 			$data['apellido'] = $session_data['apellido'];
-
+			$data['id_usuario'] = $session_data['id_usuario'];
 			$dat = array('productos' => $this->producto_model->get_teclados() );
 
 			$this->load->view('front/header_view', $data);
@@ -175,7 +175,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			$data['perfil_id'] = $session_data['perfil_id'];
 			$data['nombre'] = $session_data['nombre'];
 			$data['apellido'] = $session_data['apellido'];
-
+			$data['id_usuario'] = $session_data['id_usuario'];
 			$dat = array('productos' => $this->producto_model->get_monitores() );
 
 			$this->load->view('front/header_view', $data);
@@ -202,7 +202,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			$data['perfil_id'] = $session_data['perfil_id'];
 			$data['nombre'] = $session_data['nombre'];
 			$data['apellido'] = $session_data['apellido'];
-			
+			$data['id_usuario'] = $session_data['id_usuario'];
 
 			$dat = array('productos' => $this->producto_model->get_productos()) ;
 			$dat['categoria'] = $this->producto_model->llamar_categorias();
@@ -248,7 +248,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 				$data['perfil_id'] = $session_data['perfil_id'];
 				$data['nombre'] = $session_data['nombre'];
 				$data['apellido'] = $session_data['apellido'];
-
+				$data['id_usuario'] = $session_data['id_usuario'];
 				$dat['categoria'] = $this->producto_model->llamar_categorias();
 
 
@@ -370,7 +370,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			$data['nombre'] = $session_data['nombre'];
 			$data['apellido'] = $session_data['apellido'];
 			$dat['categoria'] = $this->producto_model->llamar_categorias();
-			
+			$data['id_usuario'] = $session_data['id_usuario'];
 			
 			$this->load->view('front/header_view', $data);
 			$this->load->view('front/navbar_view');
@@ -427,7 +427,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 				$data['nombre'] = $session_data['nombre'];
 				$data['apellido'] = $session_data['apellido'];
 				$dat['categoria'] = $this->producto_model->llamar_categorias();
-
+				$data['id_usuario'] = $session_data['id_usuario'];
 				$this->load->view('front/header_view', $data);
 				$this->load->view('front/navbar_view');
 				$this->load->view('tablas/modificaproducto_view', $dat);
@@ -549,7 +549,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			$data['perfil_id'] = $session_data['perfil_id'];
 			$data['nombre'] = $session_data['nombre'];
 			$data['apellido'] = $session_data['apellido'];
-
+			$data['id_usuario'] = $session_data['id_usuario'];
 			$dat = array(
 				'productos' => $this->producto_model->not_active_productos()
 			);
@@ -571,7 +571,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			$data['perfil_id'] = $session_data['perfil_id'];
 			$data['nombre'] = $session_data['nombre'];
 			$data['apellido'] = $session_data['apellido'];
-
+			$data['id_usuario'] = $session_data['id_usuario'];
 
 			$dat = array('ventas_cabecera' => $this->producto_model->get_ventas_cabecera());
 
@@ -585,27 +585,102 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
          }
         
         
-        function muestra_detalle($id)
+        function muestra_compra($id)
 		{
              if($this->_veri_log()){
 			$data = array('titulo' => 'Detalle');
-		
+			
 			$session_data = $this->session->userdata('logged_in');
 			$data['perfil_id'] = $session_data['perfil_id'];
 			$data['nombre'] = $session_data['nombre'];
 			$data['apellido'] = $session_data['apellido'];
+			$data['id_usuario'] = $session_data['id_usuario'];
                  
 			$dat = array('ventas_detalle' => $this->producto_model->get_ventas_detalle($id));
 
 			$this->load->view('front/header_view', $data);
 			$this->load->view('front/navbar_view', $data);
-			$this->load->view('usuarios/muestradetalle', $dat);
+			$this->load->view('ventas/muestracompras_view', $dat);
 			$this->load->view('front/footer_view');
             }else{
 			redirect('login', 'refresh');
             }
         }
+		function listar_compras($id)
+		{
+             if($this->_veri_log()){
+			$data = array('titulo' => 'Detalle');
+			
+			$session_data = $this->session->userdata('logged_in');
+			$data['perfil_id'] = $session_data['perfil_id'];
+			$data['nombre'] = $session_data['nombre'];
+			$data['apellido'] = $session_data['apellido'];
+			$data['id_usuario'] = $session_data['id_usuario'];
+                 
+			$dat = array('compras' => $this->producto_model->get_compras($id));
+
+			$this->load->view('front/header_view',$data);
+			$this->load->view('front/navbar_view',$data);
+			$this->load->view('ventas/muestracomprashechas_view',$dat);
+			$this->load->view('front/footer_view');
+            }else{
+			redirect('sesion', 'refresh');
+            }
+		} 
+		function detalles_venta()
+		{
+
+			$id = $this->uri->segment(2);
+			$detalle_venta = $this->producto_model->get_detalles_venta($id);
+
+			if ($detalle_venta != FALSE) {
+				foreach ($detalle_venta->result() as $row) 
+				{
+					$id_venta = $row->id_venta;
+					$fecha = $row->fecha;
+					$nombre = $row->nombre; 
+					$apellido = $row->apellido;
+					$email = $row->email;
+					$descripcion = $row->descripcion;
+					$precio_venta = $row->precio_venta;
+					$cantidad = $row->cantidad;
+					$total_venta = $row->total_venta;
+				}
+
+				$dat = array('detalles' =>$detalle_venta,
+					'id_venta'=>$row->id_venta,
+					'fecha'=>$fecha,
+					'nombre'=>$nombre,
+					'apellido'=>$apellido,
+					'email'=>$email,
+					'descripcion'=>$descripcion,
+					'precio_venta'=>$precio_venta,
+					'cantidad'=>$cantidad,
+					'total_venta'=>$total_venta
+				);
+			} 
+			else 
+			{
+				return FALSE;
+			}
+			
+		if($this->_veri_log()){
+			$data = array('titulo' => 'Detalles de la venta');
 		
+			$session_data = $this->session->userdata('logged_in');
+			$data['perfil_id'] = $session_data['perfil_id'];
+			$data['nombre'] = $session_data['nombre'];
+			$data['apellido'] = $session_data['apellido'];
+			$data['id_usuario'] = $session_data['id_usuario'];
+
+			$this->load->view('front/header_view',$data);
+			$this->load->view('front/navbar_view',$data);
+			$this->load->view('ventas/muestradetalles_view',$dat);
+			$this->load->view('front/footer_view');
+            }else{
+			redirect('sesion', 'refresh');
+            }
+		} 
 	}
 /* End of file
 */

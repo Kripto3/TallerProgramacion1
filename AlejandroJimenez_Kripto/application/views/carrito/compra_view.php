@@ -1,68 +1,28 @@
-<body>
-    <section class="container">
-        <h1 class="text-center mt-4 text-uppercase font-weight-bold font-italic">Confirmar Compra</h1>
+
+    <section class="container page-content">
+        <h1 class="text-left display-4 mt-4">¿Realizar compra?</h1>
         <br>
-        <p class="mb-4 ml-3 mr-2 text-center">
-            Verfique que este todo en orden antes de confirmar la compra:
+        <p class="mb-4 ml-3 mr-2 text-left">
+            A continuaci&oacute;n se muestra el resumen de la compra a realizar.
         </p>
-
-        <div class="row">
-            <div class="col-2"></div>
-            <div class="col-8">
-                <table class="table table-hover table-dark">
-                    <thead>
-                        <tr>
-                            <th class="bg-danger" colspan="3">Datos del Comprador</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    		<!--<tr>
-                            	<th>ID Usuario</th>  
-                                <td><?php echo $id;  ?></td>
-                            </tr>-->
-                    		
-                            <tr>
-                            	<th>Nombre</th>  
-                                <td><?php echo $nombre;  ?></td>
-                            </tr>
-
-                            <tr>
-                                <th>Apellido</th>
-                                <td><?php echo $apellido;  ?></td>
-                            </tr>
-                            
-                            <tr>
-                                <th>usuario</th>
-                                <td><?php echo $usuario;  ?></td>
-                            <tr>
-                                <th>email</th>
-                                <td><?php echo $email;  ?></td>
-                            </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-2"></div>
-        </div>
-    </section>
-
-    <section class="container">
-        <div class="row">
-            <div class="col-2"></div>
-            <div class="col-8">
-                <table class="table table-hover table-dark">
+        <div class="alert alert-info">
+            <h5>Datos del comprador:</h5>
+            <h4>Nombre: <?php echo $nombre;  ?> <?php echo $apellido;  ?> - Email: <?php echo $email;  ?></h4>
+            <hr/>
+            <table class="table table-bordered" style="background-color: mintcream;">
 
                     <?php // Todos los items de carrito en "$cart". 
                     if ($cart = $this->cart->contents()): //Esta función devuelve un array de los elementos agregados en el carro
           
                     ?>
                     <thead>
-                        <th class="bg-danger" colspan="4">Detalles de Compra</th>
+                        <th>Detalles de Compra</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Sub total</th>
                     </thead>
                         <tr>
-                            <th>Producto</th>
-                            <th>Precio</th>
-                            <th>Cantidad</th>
-                            <th>Subtotal</th>
+                           
                         </tr>
 
                         <?php // Crea un formulario y manda los valores a carrito_controller/actualiza carrito
@@ -98,8 +58,8 @@
                                     $total_compra = $this->cart->total(); 
                                 ?> 
                                 <tr>
-                                    <th>Total A Pagar</th>
-                                    <td colspan="3">
+                                    <th colspan="3">Total A Pagar</th>
+                                    <td class="font-weight-bold" >
                                         $<?php echo number_format ($total_compra, 2);  ?>
                                     </td>  
                                 </tr>              
@@ -108,26 +68,13 @@
                             <?php echo form_close();
                         endif; ?>
                     </table> 
-                </div>
-            <div class="col-2"></div> 
         </div>
         <div class="row">
-            <div class="col-6"></div>
             <div class="col-4">
-                <a type="button" class="btn btn-danger ml-5" href="<?php echo base_url("carrito");?>">Volver al carrito</a>
-                <a type="button" class="btn btn-dark ml-2" href="<?php echo base_url("confirma_compra");?>">Finalizar Compra</a>
+                <a  class="btn btn-outline-dark" href="<?php echo base_url("catalogo");?>">Volver al carrito</a>
+                <a  class="btn btn-outline-success ml-2" href="<?php echo base_url("confirmar_compra");?>">Finalizar Compra</a>
             </div>
-            <div class="col-2"></div>
         </div>
+        <br/>
     </section>
-
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-</body>
-
 

@@ -75,8 +75,13 @@
             </div>
 
           </div>
-        <br>  
-        <?php echo form_submit('submit', 'Enviar Consulta',"class='btn btn-success btn-block mb-5'"); ?>
+        <br> 
+         <div class="row">
+          <div class="col-12">
+            <?php echo form_submit('submit', 'Enviar Consulta',"class='btn col-3 btn-success  d-inline-block mb-5'"); ?>
+            <?php echo form_reset ('reset', 'Limpiar', "class='btn btn-secondary col-3 ml-2 mb-5''"); ?>
+          </div>
+        </div>
         <?php echo form_close(); ?>
       </div>
   </div>

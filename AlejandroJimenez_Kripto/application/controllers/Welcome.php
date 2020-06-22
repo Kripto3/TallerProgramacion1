@@ -15,6 +15,7 @@ class Welcome extends CI_Controller {
 		$data['perfil_id'] = $session_data['perfil_id'];
 		$data['nombre'] = $session_data['nombre'];
 		$data['apellido'] = $session_data['apellido'];
+		$data['id_usuario'] = $session_data['id_usuario'];
 		
 		$this->load->view('front/header_view', $data); 
 		$this->load->view('front/navbar_view'); 
@@ -31,7 +32,7 @@ class Welcome extends CI_Controller {
 		$data['perfil_id'] = $session_data['perfil_id'];
 		$data['nombre'] = $session_data['nombre'];
 		$data['apellido'] = $session_data['apellido'];
-
+		$data['id_usuario'] = $session_data['id_usuario'];
 		$this->load->view('front/header_view', $data); 
 		$this->load->view('front/navbar_view'); 
 		$this->load->view('partes/comercializacion'); 
@@ -47,7 +48,7 @@ class Welcome extends CI_Controller {
 		$data['perfil_id'] = $session_data['perfil_id'];
 		$data['nombre'] = $session_data['nombre'];
 		$data['apellido'] = $session_data['apellido'];
-
+		$data['id_usuario'] = $session_data['id_usuario'];
 		$this->load->view('front/header_view', $data); 
 		$this->load->view('front/navbar_view'); 
 		$this->load->view('partes/informacion_de_contactos'); 
@@ -63,7 +64,7 @@ class Welcome extends CI_Controller {
 		$data['perfil_id'] = $session_data['perfil_id'];
 		$data['nombre'] = $session_data['nombre'];
 		$data['apellido'] = $session_data['apellido'];
-
+		$data['id_usuario'] = $session_data['id_usuario'];
 		$this->load->view('front/header_view', $data); 
 		$this->load->view('front/navbar_view'); 
 		$this->load->view('partes/catalogo_de_productos'); 
@@ -78,7 +79,7 @@ class Welcome extends CI_Controller {
 		$data['perfil_id'] = $session_data['perfil_id'];
 		$data['nombre'] = $session_data['nombre'];
 		$data['apellido'] = $session_data['apellido'];
-
+		$data['id_usuario'] = $session_data['id_usuario'];
 		$this->load->view('front/header_view', $data); 
 		$this->load->view('front/navbar_view'); 
 		$this->load->view('partes/quienes_somos'); 
@@ -93,7 +94,7 @@ class Welcome extends CI_Controller {
 		$data['perfil_id'] = $session_data['perfil_id'];
 		$data['nombre'] = $session_data['nombre'];
 		$data['apellido'] = $session_data['apellido'];
-
+		$data['id_usuario'] = $session_data['id_usuario'];
 		$this->load->view('front/header_view', $data); 
 		$this->load->view('front/navbar_view'); 
 		$this->load->view('partes/consultas'); 
@@ -109,7 +110,7 @@ class Welcome extends CI_Controller {
 		$data['perfil_id'] = $session_data['perfil_id'];
 		$data['nombre'] = $session_data['nombre'];
 		$data['apellido'] = $session_data['apellido'];
-
+		$data['id_usuario'] = $session_data['id_usuario'];
 		$this->load->view('front/header_view', $data); 
 		$this->load->view('front/navbar_view'); 
 		$this->load->view('partes/terminos_y_usos'); 

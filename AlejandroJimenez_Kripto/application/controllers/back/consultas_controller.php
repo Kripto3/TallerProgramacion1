@@ -30,7 +30,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			$data['perfil_id'] = $session_data['perfil_id'];
 			$data['nombre'] = $session_data['nombre'];
 			$data['apellido'] = $session_data['apellido'];
-
+			$data['id_usuario'] = $session_data['id_usuario'];
 			$dat = array('consultas' => $this->consultas_model->get_consultas() );
 
 			$this->load->view('front/header_view',$data);
@@ -50,7 +50,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			$data['perfil_id'] = $session_data['perfil_id'];
 			$data['nombre'] = $session_data['nombre'];
 			$data['apellido'] = $session_data['apellido'];
-			
+			$data['id_usuario'] = $session_data['id_usuario'];
 			$dat = array('consultas' => $this->consultas_model->ver_archivados());
 
 			$this->load->view('front/header_view',$data);
@@ -71,7 +71,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 			$data['perfil_id'] = $session_data['perfil_id'];
 			$data['nombre'] = $session_data['nombre'];
 			$data['apellido'] = $session_data['apellido'];
-
+			$data['id_usuario'] = $session_data['id_usuario'];
 			$dat = array('consultas' => $this->consultas_model->get_consultas());
 
 			$this->load->view('front/header_view',$data);

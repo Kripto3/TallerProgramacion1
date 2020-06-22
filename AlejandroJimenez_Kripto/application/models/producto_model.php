@@ -12,8 +12,12 @@ class Producto_model extends CI_Model{
     */
     function get_productos()
     {
-        $query = $this->db->get_where('productos', array('eliminado' => 'NO'));
-        
+       // $query = $this->db->get_where('productos', array('eliminado' => 'NO'));
+        $this->db->select('*');
+        $this->db->from('productos');
+        $this->db->join('categorias','categorias.id = productos.categoria_id');
+        $this->db->where('eliminado','NO');
+        $query = $this->db->get();
         if($query->num_rows()>0) {
             return $query;
         } else {
@@ -138,7 +142,11 @@ class Producto_model extends CI_Model{
         */
     function not_active_productos()
     {
-        $query = $this->db->get_where('productos', array('eliminado' => 'SI'));
+        $this->db->select('*');
+        $this->db->from('productos');
+        $this->db->join('categorias','categorias.id = productos.categoria_id');
+        $this->db->where('eliminado','SI');
+        $query = $this->db->get();
         if($query->num_rows()>0) {
             return $query;
         } else {
@@ -150,33 +158,66 @@ class Producto_model extends CI_Model{
         $this->db->select('*');
         $this->db->from('ventas_cabecera');
         $this->db->join('usuarios','usuarios.id_usuario = ventas_cabecera.usuario_id');
-        $this->db->join('ventas_detalles','ventas_detalles.venta_id = ventas_cabecera.id');
+        $this->db->join('ventas_detalles','ventas_detalles.venta_id = ventas_cabecera.id_venta');
         $this->db->join('productos','productos.id = ventas_detalles.producto_id');
         $this->db->join('categorias','categorias.id = productos.categoria_id');
         $this->db->order_by('fecha', 'desc');
         $queryList = $this->db->get();
         // print_r($queryList->result());
-        //select * from ventas_cabecera;
         if($queryList->num_rows()>0) {
             return $queryList;
         } else {
             return FALSE;
         }
     }
-    
-        function get_ventas_detalle($id)
+    //optiene elk detalle de la venta poara el ADMIN
+    function get_ventas_detalle($id)
     {
-        $queryList = $this->db->join('productos','productos.id = ventas_detalle.producto_id');   
-
-        //select * from ventas_detalle;
-        $query = $this->db->get_where('ventas_detalle', array('venta_id' => $id));
+        $this->db->select('*');
+        $this->db->from('ventas_cabecera');
+        $this->db->join('usuarios','usuarios.id_usuario = ventas_cabecera.usuario_id');
+        $this->db->join('ventas_detalles','ventas_detalles.venta_id = ventas_cabecera.id_venta');
+        $this->db->join('productos','productos.id = ventas_detalles.producto_id');
+        $this->db->join('categorias','categorias.id = productos.categoria_id');
+        $this->db->where('usuario_id', $id);
+        $this->db->order_by('fecha', 'desc');
+  
+        $queryList = $this->db->get();
        
-        
-        if($query->num_rows()>0) {
-            return $query;
+        if($queryList->num_rows()>0) {
+            return $queryList;
         } else {
             return FALSE;
         }
+    }
+    //obtiene el detalle de la venta resumida
+    function get_detalles_venta($id)
+    {
+
+        $this->db->select('*');
+        $this->db->from('ventas_cabecera');
+        $this->db->join('usuarios','usuarios.id_usuario = ventas_cabecera.usuario_id');
+        $this->db->join('ventas_detalles','ventas_detalles.venta_id = ventas_cabecera.id_venta');
+        $this->db->join('productos','productos.id = ventas_detalles.producto_id');
+        
+        $this->db->where('id_venta', $id);
+ 
+        $queryList = $this->db->get();
+        
+        if($queryList->num_rows()>0) {
+            return $queryList;
+        } else {
+            return FALSE;
+        }
+    }
+    //Retorna el stock del producto buscado por id
+    public function get_stock($id=NULL)
+    {
+        $this->db->select('stock');
+        $this->db->from('productos');
+        $this->db->where('id', $id);
+        $query = $this->db->get()->row();
+        return $query->stock;
     }
 
     	/**

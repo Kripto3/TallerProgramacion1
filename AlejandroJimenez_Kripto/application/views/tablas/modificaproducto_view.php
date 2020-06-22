@@ -29,9 +29,8 @@
 					<?php
 					
 					$lista[$categoria_id] = '';
-					//print_r($categoria_id);
 					foreach ($categoria as $row){
-							$lista[$row->id] = $row->descripcion;
+							$lista[$row->id] = $row->descripcion_categoria;
 					}
 						$propiedades = [
 								'name' => 'categoria_id', 

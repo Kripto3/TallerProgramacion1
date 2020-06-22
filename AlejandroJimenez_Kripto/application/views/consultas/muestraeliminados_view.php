@@ -7,11 +7,9 @@
 	</div>
 <?php } else { ?>
 
-	<div class="container">
-		<div class="well">
-			<h1>Consultas Archivadas</h1>
-		</div>	
-		<br><br>
+	<div class="container page-content">
+		<h1	 class="display-4 text-left">Listado de consultas archivadas</h1>
+		<hr>
 		<table id="example" class="table table-striped table-bordered" style="width:100%">
 			<thead>
 				<tr>
@@ -40,7 +38,8 @@
 				</tr>
 				<?php } ?>
 			</tbody>
-		</table>	            
+		</table>	
+		<a href="<?php echo base_url('ver_consultas'); ?>" class="btn btn-lg col-2 btn-secondary">Volver</a>	            
 	</div>
 	<?php } ?>
 		

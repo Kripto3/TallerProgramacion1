@@ -22,19 +22,19 @@
 					<a class="text-decoration-none text-white" href="<?php echo base_url('productos/auriculares');?>">Auriculares</a>
 				</li>
 				<li class="list-group-item bg-info">
-					<a class="text-decoration-none text-white" href="<?php echo base_url('productos/mouse');?>">Mouse</a>
+					<a class="text-decoration-none text-white" href="<?php echo base_url('productos/mouse');?>">Mouses</a>
 				</li>
 				<li class="list-group-item bg-info">
-					<a class="text-decoration-none text-white" href="<?php echo base_url('productos/teclado');?>">Teclado</a>
+					<a class="text-decoration-none text-white" href="<?php echo base_url('productos/teclado');?>">Teclados</a>
 				</li>
 				<li class="list-group-item bg-info">
-					<a class="text-decoration-none text-white" href="<?php echo base_url('productos/monitor');?>">Monitor</a>
+					<a class="text-decoration-none text-white" href="<?php echo base_url('productos/monitor');?>">Monitores</a>
 				</li>
 				<li class="list-group-item bg-info">
-					<a class="text-decoration-none text-white" href="<?php echo base_url('productos/notebook');?>" class="">Notebook</a>
+					<a class="text-decoration-none text-white" href="<?php echo base_url('productos/notebook');?>" class="">Notebooks</a>
 				</li>
 				<li class="list-group-item bg-info">
-					<a class="text-decoration-none text-white" href="<?php echo base_url('productos/escritorio');?>" class="">Escritorio</a>
+					<a class="text-decoration-none text-white" href="<?php echo base_url('productos/escritorio');?>" class="">Escritorios</a>
 				</li>
 			</ul>
 		</div>

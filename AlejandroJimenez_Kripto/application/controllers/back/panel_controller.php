@@ -21,7 +21,7 @@ class Panel_controller extends CI_Controller{
             $data['perfil_id'] = $session_data['perfil_id'];
 			$data['nombre'] = $session_data['nombre'];
 			$data['apellido'] = $session_data['apellido'];
-
+			$data['id_usuario'] = $session_data['id_usuario'];
             $this->load->view('front/header_view', $data);
             $this->load->view('front/navbar_view', $data);
             $this->load->view('front/panel_view', $data);

@@ -56,7 +56,7 @@
 							<tr>
 							<td><?php echo $id;  ?></td>
 							<td><?php echo $row->descripcion;  ?></td>
-							<td><?php echo $row->categoria_id;  ?></td>
+							<td><?php echo $row->descripcion_categoria;  ?></td>
 							<td><?php echo $row->precio_venta;  ?></td>
 							<td><?php echo $row->stock;  ?></td>
 						    <td><img height="80px" src="<?php echo $imagen; ?>"/></td>
