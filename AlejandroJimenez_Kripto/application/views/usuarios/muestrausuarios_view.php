@@ -13,7 +13,8 @@
 			<hr>
 			<div class="row">
 				<?php if( ($this->session->userdata('logged_in')) and ($perfil_id == '1') ) { ?>
-					<a title="Agregar usuarios" class="card col-4 mb-4 mr-3 text-decoration-none border-success" href="<?php echo base_url('agrega_usuarios'); ?>">
+					<div class="col-md-4">
+					<a title="Agregar usuarios" class="card  mb-4  text-decoration-none border-success" href="<?php echo base_url('agrega_usuarios'); ?>">
 						<div class="card-body">
 						<i class="fa fa-address-book-o fa-3x text-success float-left mr-2"></i>
 						<div class="card-horizontal-content mr-2">
@@ -21,7 +22,9 @@
 						</div>
 						</div>
 					</a>
-					<a title="Ver usuarios usuarios" class="card col-4 mb-4 text-decoration-none border-danger" href="<?php echo base_url('usuarios_eliminados'); ?>">
+					</div>
+					<div class="col-md-4">
+					<a title="Ver usuarios usuarios" class="card  mb-4 text-decoration-none border-danger" href="<?php echo base_url('usuarios_eliminados'); ?>">
 						<div class="card-body">
 							<i class="fa fa-user-times fa-3x text-danger float-left mr-2"></i>
 							<div class="card-horizontal-content">
@@ -29,6 +32,7 @@
 							</div>
 						</div>
 					</a>
+					</div>
 				<?php }else	{ ?>
 					<a type="button" class="btn btn-danger" href="<?php echo base_url('usuarios_eliminados'); ?>">Ver Eliminados</a>
 				<?php } ?>

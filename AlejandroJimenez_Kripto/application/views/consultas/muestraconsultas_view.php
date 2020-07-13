@@ -11,14 +11,16 @@
 			<h1 class="text-left display-4 mt-4">Listado de Consultas</h1>
 			<hr>
 			<div class="row">
-			<a title="Ver archivados" class="card col-4 mb-4 ml-3 text-decoration-none border-warning" href="<?php echo base_url('ver_archivados'); ?>">
-						<div class="card-body">
-						<i class="fa fa-archive fa-3x text-warning float-left mr-2"></i>
-						<div class="card-horizontal-content mr-2">
-							<p class="h5 card-title text-warning">Ver Archivados</p>
-						</div>
-						</div>
-					</a>
+			<div class="col-md-4">
+			<a title="Ver archivados" class="card mb-4 ml-3 text-decoration-none border-warning" href="<?php echo base_url('ver_archivados'); ?>">
+				<div class="card-body">
+				<i class="fa fa-archive fa-3x text-warning float-left mr-2"></i>
+				<div class="card-horizontal-content mr-2">
+					<p class="h5 card-title text-warning">Ver Archivados</p>
+				</div>
+				</div>
+			</a>
+			</div>
 			</div>
 		<table id="example" class="table table-striped table-bordered" style="width:100%">
 			<thead>
